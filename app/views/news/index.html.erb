@@ -1,0 +1,67 @@
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <!-- <link href="css/agency.min.css" rel="stylesheet"> -->
+     <%= stylesheet_link_tag 'application', media: 'all' %>
+     <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+    <main role="main">
+
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron" id="slider2">
+        <div class="container">\
+          <br><br>
+          <h1 class="display-3 text-putih" >MTC Oiukjsdhf kjshfka </h1>
+          <p class="text-putih">Disini akan ada headline news, yang paling hot news</p>
+          <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+        </div>
+      </div>
+
+      <div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+
+          <tbody>
+            <% @news.each do |news| %>
+              <div class="col-sm-4">
+                <div class="berita">
+              <h2><%= news.judul %></h2>
+              <p><%= image_tag news.foto.url if news.foto? %></p>
+              <p><%= news.ringkasan %></p>
+              <p><%= link_to "View details>>", news, class: "btn btn-success"%>
+                <%= link_to 'Edit', edit_news_path(news), class: "btn btn-warning" %>
+              <%= link_to 'Destroy', news, class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></p>
+            </div>
+        </div>
+            <% end %>
+          </tbody>
+      </div>
+        <br><br>
+        <hr>
+      </div>
+      <!-- /container -->
+    </main>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
+<p id="notice"><%= notice %></p>
+<%= link_to 'New News', new_news_path %>

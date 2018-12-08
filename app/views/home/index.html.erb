@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Agency - Start Bootstrap Theme</title>
+
+    <!-- Bootstrap core CSS -->
+    <!-- <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <!-- <link href="css/agency.min.css" rel="stylesheet"> -->
+     <%= stylesheet_link_tag 'application', media: 'all' %>
+     <%= javascript_include_tag 'application' %>
+
+  </head>
+
+  <body id="page-top">
+
+    <!-- Navigation -->
+
+    <!-- Header -->
+    <header class="masthead"  >
+      <div class="container">
+        <div class="intro-text">
+         
+          <div class="intro-heading text-uppercase">M T C</div>
+          <div class="intro-lead-in" >Malingping Taekwondo Community</div>
+          <br><br><a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Tell Me More</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Services -->
+    <section id="services">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-uppercase">Kegiatan MTC</h2>
+            <h3 class="section-subheading text-muted">MTC aktif dalam perlombaan Kyourugi maupun Poomsae maupun pertunjukan Demo</h3>
+          </div>
+        </div>
+        <div class="row text-center">
+          <div class="col-md-4">
+            <span class="fa-stack fa-4x">
+              <img class="rounded-circle img-fluid" src=<%= image_path('poomsae.jpg') %> >
+            </span>
+            <h4 class="service-heading">Poomsae</h4>
+            <p class="text-muted">Rangkaian teknik gerakan dasar serangan dan pertahanan diri, yang dilakukan melawan lawan yang imajiner, dengan mengikuti diagram tertentu. Setiap diagram rangkaian gerakan poomse didasari oleh filosofi timur yang menggambarkan semangat dan cara pandang bangsa Korea</p>
+          </div>
+          <div class="col-md-4">
+            <span class="fa-stack fa-4x">
+              <img class="rounded-circle img-fluid" src=<%= image_path('kyo.jpg') %> >
+            </span>
+            <h4 class="service-heading">Kyorugi</h4>
+            <p class="text-muted">Mengaplikasikan teknik gerakan dasar atau poomse, dimana dua orang yang bertarung saling mempraktikkan teknik serangan dan teknik pertahanan kaki.</p>
+          </div>
+          <div class="col-md-4">
+            <span class="fa-stack fa-4x">
+              <i class="fas fa-circle fa-stack-2x text-primary"></i>
+              <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
+            </span>
+            <h4 class="service-heading">Demo</h4>
+            <p class="text-muted">Demo biasanya dipertunjukan pada event-event tertentu dengan tujuan memperkenalkan Taekwondo kepada umum. Adapun bentuk demo mulai dari Poomsae, Kyourugi, Kyoukpa(pemecahan) dan flashmob</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Grid -->
+    <section class="bg-light" id="portfolio">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-uppercase">News</h2>
+            <h3 class="section-subheading text-muted">Berita terkini MTC</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 col-sm-6 portfolio-item">
+            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                  <i class="fas fa-plus fa-3x"></i>
+                </div>
+              </div>
+               <img class="img-fluid" src=<%= image_path('portfolio/01-thumbnail.jpg') %> >
+            </a>
+            <div class="portfolio-caption">
+              <h4>Juara Umum 1</h4>
+              <p class="text-muted">Kejuaraan Nasional</p>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 portfolio-item">
+            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                  <i class="fas fa-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src=<%= image_path('portfolio/02-thumbnail.jpg') %> >
+            </a>
+            <div class="portfolio-caption">
+              <h4>Juara 1 Poomsae</h4>
+              <p class="text-muted">Kejuaraan Internasional</p>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 portfolio-item">
+            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                  <i class="fas fa-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src=<%= image_path('portfolio/03-thumbnail.jpg') %> >
+            </a>
+            <div class="portfolio-caption">
+              <h4>Sejarah Taekwondo</h4>
+              <p class="text-muted">Merintis Taekwondo</p>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 portfolio-item">
+            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal4">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                  <i class="fas fa-plus fa-3x"></i>
+                </div>
+              </div>
+               <img class="img-fluid" src=<%= image_path('portfolio/04-thumbnail.jpg') %> >
+            </a>
+            <div class="portfolio-caption">
+              <h4>Buka Bersama</h4>
+              <p class="text-muted">Buka bersama alumni Taekwondo 7000 orang</p>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 portfolio-item">
+            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal5">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                  <i class="fas fa-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src=<%= image_path('portfolio/05-thumbnail.jpg') %> >
+            </a>
+            <div class="portfolio-caption">
+              <h4>MTC Masuk Koran !! </h4>
+              <p class="text-muted">Prestasi MTC mendunia!</p>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 portfolio-item">
+            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal6">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                  <i class="fas fa-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src=<%= image_path('portfolio/06-thumbnail.jpg') %> >
+            </a>
+            <div class="portfolio-caption">
+              <h4>MTC adalah rumah</h4>
+              <p class="text-muted">Merantaulah maka kau akan tau rindunya rumah</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-uppercase">Jadwal Latihan</h2>
+            <h3 class="section-subheading text-muted">MTC melakukan latihan mulai Minggu hingga Jumat</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <ul class="timeline">
+              <li>
+                <div class="timeline-image">
+                  <img class="rounded-circle img-fluid" src=<%= image_path('about/club.jpg') %> >
+                </div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <!-- <h4>2009-2011</h4> -->
+                    <h4 class="subheading">Selasa dan Kamis, 13.30</h4>
+                  </div>
+                  <div class="timeline-body">
+                    <p class="text-muted">Latihan hari Selasa bertempat di Alun - alun Malingping. Latihan ini merupakan latihan mingguan untuk Club MTC mulai dari anak anak hingga dewasa</p>
+                  </div>
+                </div>
+              </li>
+              <li class="timeline-inverted">
+                <div class="timeline-image">
+                  <img class="rounded-circle img-fluid" src=<%= image_path('about/smp.jpg') %> >
+                </div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <!-- <h4>March 2011</h4> -->
+                    <h4 class="subheading">Senin dan Rabu, 14.00</h4>
+                  </div>
+                  <div class="timeline-body">
+                    <p class="text-muted">Latihan hari Senin dan Rabu di khususkan untuk SMP Negeri 1 Wanassalam</p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="timeline-image">
+                  <img class="rounded-circle img-fluid" src=<%= image_path('about/sma.jpg') %> >
+                </div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <!-- <h4>December 2012</h4> -->
+                    <h4 class="subheading">Jumat, 12.45</h4>
+                  </div>
+                  <div class="timeline-body">
+                    <p class="text-muted">Latihan hari Jumat bertempat di SMA Negeri 1 Malingping, latihan ini merupakan latihan khusus untuk murid yang bersekolah di SMAN 1 Malingping sebagai ekstra kulikuler sekolah</p>
+                  </div>
+                </div>
+              </li>
+              <li class="timeline-inverted">
+                <div class="timeline-image">
+                  <img class="rounded-circle img-fluid" src=<%= image_path('about/club.jpg') %> >
+                </div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <!-- <h4>July 2014</h4> -->
+                    <h4 class="subheading">Minggu, 7.00</h4>
+                  </div>
+                  <div class="timeline-body">
+                    <p class="text-muted">Latihan hari Minggu bertempat di GOR Gintung, latihan ini merupakan latihan gabungan dari latihan Club, SMA dan SMP</p>
+                  </div>
+                </div>
+              </li>
+              <li class="timeline-inverted">
+                <div class="timeline-image">
+                  <h4>Be Part
+                    <br>Of Our
+                    <br>Story!</h4>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team -->
+    <section class="bg-light" id="team">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-uppercase">Our Amazing Team</h2>
+            <h3 class="section-subheading text-muted">Martial arts is not about fighting; it's about building character</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="team-member">
+              <img class="rounded-circle img-fluid" src=<%= image_path('team/sbm_anda.png') %> >
+              <h6>Sabeum Nim Anda Kuswanda</h6>
+              <p class="text-muted">Pelatih Kepala</p>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="team-member">
+              <img class="rounded-circle img-fluid" src=<%= image_path('team/sbm_andi.png') %> >
+              <h6>Sabeum Nim Andi Kuswandi</h6>
+              <p class="text-muted">Pelatih Kepala</p>
+            </div>
+          </div>
+        </div>
+          <div class="row">
+          <div class="col-sm-2">
+            <div class="team-member">
+              <img class="rounded-circle img-fluid" src=<%= image_path('team/putri.png') %> >
+              <h6>Sabeum Putri Wulan</h6>
+              <p class="text-muted">Asisten Pelatih</p>
+            </div>
+          </div>
+          <div class="col-sm-2">
+            <div class="team-member">
+              <img class="rounded-circle img-fluid" src=<%= image_path('team/oca.png') %> >
+              <h6>Sabeum Dede Firmansyah</h6>
+              <p class="text-muted">Asisten Pelatih</p>
+            </div>
+          </div>
+          <div class="col-sm-2">
+            <div class="team-member">
+              <img class="rounded-circle img-fluid" src=<%= image_path('team/zul.png') %> >
+              <h6>Sabeum Zulkarnaen</h6>
+              <p class="text-muted">Asisten Pelatih</p>
+            </div>
+          </div>
+          <div class="col-sm-2">
+            <div class="team-member">
+              <img class="rounded-circle img-fluid" src=<%= image_path('team/3.jpg') %> >
+              <h6>Sabeum Dedi Yusuf</h6>
+              <p class="text-muted">Asisten Pelatih</p>
+            </div>
+          </div>
+          <div class="col-sm-2">
+            <div class="team-member">
+              <img class="rounded-circle img-fluid" src=<%= image_path('team/ulfah.png') %> >
+              <h6>Sabeum Ulfah</h6>
+              <p class="text-muted">Asisten Pelatin</p>
+            </div>
+          </div>
+          <div class="col-sm-2">
+            <div class="team-member">
+              <img class="rounded-circle img-fluid" src=<%= image_path('team/asfa.png') %> >
+              <h6>Sabeum Asfa</h6>
+              <p class="text-muted">Asisten Pelatin</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <p class="large text-muted">Jargon MTC disini</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Clients -->
+    <section class="py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-6">
+            <a href="#">
+              <img class="img-fluid d-block mx-auto" src=<%= image_path('logos/envato.jpg') %> >
+            </a>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <a href="#">
+              <img class="img-fluid d-block mx-auto" src=<%= image_path('logos/designmodo.jpg') %> >
+            </a>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <a href="#">
+              <img class="img-fluid d-block mx-auto" src=<%= image_path('logos/themeforest.jpg') %> >
+            </a>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <a href="#">
+              <img class="img-fluid d-block mx-auto" src=<%= image_path('logos/creative-market.jpg') %> >
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-uppercase">Contact Us</h2>
+            <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <form id="contactForm" name="sentMessage" novalidate="novalidate">
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="map">
+                   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.9353956923774!2d106.01744174968931!3d-6.777717768140053!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e42590033f6a15b%3A0x7d175477360aa11d!2sAlun+Alun+Malingping!5e0!3m2!1sid!2sid!4v1543904546804" width="500" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                   <br><br>
+                    </div>
+                  </div>
+                  <div class="col-sm-1">
+                      <img class="rounded-circle img-fluid" src=<%= image_path('wa.png')%> width="100" height="100" >
+                  </div>
+                  <div class="col-sm-2">
+                    <p class="text-muted">Ulfah</p>
+                    <p class="text-muted">01234567890</p>
+                  </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input class="form-control" id="name" type="text" placeholder="Your Name *" required="required" data-validation-required-message="Please enter your name.">
+                    <p class="help-block text-danger"></p>
+                  </div>
+                  <div class="form-group">
+                    <input class="form-control" id="email" type="email" placeholder="Your Email *" required="required" data-validation-required-message="Please enter your email address.">
+                    <p class="help-block text-danger"></p>
+                  </div>
+                  <div class="form-group">
+                    <input class="form-control" id="phone" type="tel" placeholder="Your Phone *" required="required" data-validation-required-message="Please enter your phone number.">
+                    <p class="help-block text-danger"></p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <textarea class="form-control" id="message" placeholder="Your Message *" required="required" data-validation-required-message="Please enter a message."></textarea>
+                    <p class="help-block text-danger"></p>
+                  </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="col-lg-12 text-center">
+                  <div id="success"></div>
+                  <button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase" type="submit">Send Message</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+   
+
+    <!-- Portfolio Modals -->
+
+    <!-- Modal 1 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+              <div class="rl"></div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 mx-auto">
+                <div class="modal-body">
+                  <!-- Project Details Go Here -->
+                  <h2 class="text-uppercase">Project Name</h2>
+                  <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                  <img class="img-fluid d-block mx-auto" src="img/portfolio/01-full.jpg" alt="">
+                  <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                  <ul class="list-inline">
+                    <li>Date: January 2017</li>
+                    <li>Client: Threads</li>
+                    <li>Category: Illustration</li>
+                  </ul>
+                  <button class="btn btn-primary" data-dismiss="modal" type="button">
+                    <i class="fas fa-times"></i>
+                    Close Project</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 2 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+              <div class="rl"></div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 mx-auto">
+                <div class="modal-body">
+                  <!-- Project Details Go Here -->
+                  <h2 class="text-uppercase">Project Name</h2>
+                  <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                  <img class="img-fluid d-block mx-auto" src=<%= image_path('portfolio/02-full') %> >
+                  <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                  <ul class="list-inline">
+                    <li>Date: January 2017</li>
+                    <li>Client: Explore</li>
+                    <li>Category: Graphic Design</li>
+                  </ul>
+                  <button class="btn btn-primary" data-dismiss="modal" type="button">
+                    <i class="fas fa-times"></i>
+                    Close Project</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 3 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+              <div class="rl"></div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 mx-auto">
+                <div class="modal-body">
+                  <!-- Project Details Go Here -->
+                  <h2 class="text-uppercase">Project Name</h2>
+                  <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                  <img class="img-fluid d-block mx-auto" src="img/portfolio/03-full.jpg" alt="">
+                  <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                  <ul class="list-inline">
+                    <li>Date: January 2017</li>
+                    <li>Client: Finish</li>
+                    <li>Category: Identity</li>
+                  </ul>
+                  <button class="btn btn-primary" data-dismiss="modal" type="button">
+                    <i class="fas fa-times"></i>
+                    Close Project</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 4 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+              <div class="rl"></div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 mx-auto">
+                <div class="modal-body">
+                  <!-- Project Details Go Here -->
+                  <h2 class="text-uppercase">Project Name</h2>
+                  <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                  <img class="img-fluid d-block mx-auto" src="img/portfolio/04-full.jpg" alt="">
+                  <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                  <ul class="list-inline">
+                    <li>Date: January 2017</li>
+                    <li>Client: Lines</li>
+                    <li>Category: Branding</li>
+                  </ul>
+                  <button class="btn btn-primary" data-dismiss="modal" type="button">
+                    <i class="fas fa-times"></i>
+                    Close Project</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 5 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+              <div class="rl"></div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 mx-auto">
+                <div class="modal-body">
+                  <!-- Project Details Go Here -->
+                  <h2 class="text-uppercase">Project Name</h2>
+                  <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                  <img class="img-fluid d-block mx-auto" src="img/portfolio/05-full.jpg" alt="">
+                  <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                  <ul class="list-inline">
+                    <li>Date: January 2017</li>
+                    <li>Client: Southwest</li>
+                    <li>Category: Website Design</li>
+                  </ul>
+                  <button class="btn btn-primary" data-dismiss="modal" type="button">
+                    <i class="fas fa-times"></i>
+                    Close Project</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 6 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+              <div class="rl"></div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 mx-auto">
+                <div class="modal-body">
+                  <!-- Project Details Go Here -->
+                  <h2 class="text-uppercase">Project Name</h2>
+                  <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                  <img class="img-fluid d-block mx-auto" src="img/portfolio/06-full.jpg" alt="">
+                  <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                  <ul class="list-inline">
+                    <li>Date: January 2017</li>
+                    <li>Client: Window</li>
+                    <li>Category: Photography</li>
+                  </ul>
+                  <button class="btn btn-primary" data-dismiss="modal" type="button">
+                    <i class="fas fa-times"></i>
+                    Close Project</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Contact form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/agency.min.js"></script>
+
+  </body>
+
+</html>

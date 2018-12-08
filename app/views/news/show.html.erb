@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id creator:</strong>
+  <%= @news.id_creator %>
+</p>
+
+<p>
+  <strong>Judul:</strong>
+  <%= @news.judul %>
+</p>
+
+<p>
+  <strong>Foto:</strong>
+  <%= image_tag @news.foto.url if @news.foto? %>
+</p>
+
+<p>
+  <strong>Isi:</strong>
+  <%= @news.isi %>
+</p>
+
+<p>
+  <strong>Ringkasan:</strong>
+  <%= @news.ringkasan %>
+</p>
+
+<%= link_to 'Edit', edit_news_path(@news) %> |
+<%= link_to 'Back', news_index_path %>

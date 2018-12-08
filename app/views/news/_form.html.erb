@@ -1,0 +1,60 @@
+<%= form_with(model: news, local: true) do |form| %>
+  <% if news.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(news.errors.count, "error") %> prohibited this news from being saved:</h2>
+
+      <ul>
+      <% news.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="container">
+  <div class="row">
+   <div class="col-sm-2">
+
+              <div class="list-group">
+                <a href="#" class="list-group-item active"><span>All News</span></a>
+                <a href="#" class="list-group-item"> <span>Prestasi</span></a>
+                <a href="#" class="list-group-item"> <span>Seputar Dojang</span></a>
+                <a href="#" class="list-group-item"> <span>Event</span></a>
+              </div>
+    </div>
+
+    <div class="col-sm-6">
+      <div class="form-group">
+        <%= form.label :id_creator %>
+        <%= form.text_field :id_creator , class: "form-control" %>
+      </div>    
+
+      <div class="form-group">
+        <%= form.label :judul %>
+        <%= form.text_field :judul , class: "form-control"%>
+      </div>    
+
+      <div class="form-group">
+        <%= form.label :foto %>
+        <%= form.file_field :foto , class: "form-control-file"%>
+      </div>    
+
+      <div class="form-group">
+        <%= form.label :isi %>
+        <%= form.text_area :isi , class: "form-control"%>
+      </div>    
+
+      <div class="form-group">
+        <%= form.label :ringkasan %>
+        <%= form.text_area :ringkasan , class: "form-control"%>
+      </div>    
+
+      <div class="form-group">
+        <%= form.submit %>
+      </div>
+    <% end %>
+    </div>
+  </div>
+
+  
+      
+</div>

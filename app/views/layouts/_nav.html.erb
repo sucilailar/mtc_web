@@ -1,0 +1,41 @@
+  <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">MTC</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav text-uppercase ml-auto">
+            <li class="nav-item">
+              <%= link_to "Beranda", root_path , class: "nav-link js-scroll-trigger"%>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Profil", profil_path , class: "nav-link js-scroll-trigger"%>
+            <!--   <a class="nav-link js-scroll-trigger" href="#portfolio">Profil</a> -->
+            </li>
+            <li class="nav-item">
+              <%= link_to "Berita", news_index_path , class: "nav-link js-scroll-trigger"%>
+              
+            </li>
+            <li class="nav-item">
+             <div class="dropdown show">
+              <a class="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Event
+              </a>            
+              <div class="dropdown-menu " aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item " href="#">UKT</a>
+                <a class="dropdown-item " href="#">Kejuaraan</a>
+                <a class="dropdown-item" href="#">Demo</a>
+              </div>
+            </div>
+              <!-- <a class="nav-link js-scroll-trigger" href="#team">Event</a> -->
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#contact">Daftar</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
