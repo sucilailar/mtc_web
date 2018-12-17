@@ -1,0 +1,2 @@
+class Ka < ApplicationRecord
+end

@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Akun:</strong>
+  <%= @pembayaran.akun_id %>
+</p>
+
+<p>
+  <strong>Kategori kegiatan:</strong>
+  <%= @pembayaran.kategori_kegiatan_id %>
+</p>
+
+<p>
+  <strong>Nominal:</strong>
+  <%= @pembayaran.nominal %>
+</p>
+
+<p>
+  <strong>Cicilan:</strong>
+  <%= @pembayaran.cicilan %>
+</p>
+
+<p>
+  <strong>Keterangan:</strong>
+  <%= @pembayaran.keterangan %>
+</p>
+
+<p>
+  <strong>Id bendahara:</strong>
+  <%= @pembayaran.id_bendahara %>
+</p>
+
+<%= link_to 'Edit', edit_pembayaran_path(@pembayaran) %> |
+<%= link_to 'Back', pembayarans_path %>

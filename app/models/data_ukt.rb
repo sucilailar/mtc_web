@@ -1,0 +1,2 @@
+class DataUkt < ApplicationRecord
+end

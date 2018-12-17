@@ -1,0 +1,63 @@
+<%= render 'layouts/header_adm'%>
+
+<p id="notice"><%= notice %></p>
+
+<h1 style="text-align: center;">Kas SMA</h1>
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+</head>
+
+<div class="container">
+   <div class="row">
+    <div class="col-sm-2">
+      <div class="list-group">
+        <a href="#" class="list-group-item "><span>Kas SMA</span></a>
+        <a href="#" class="list-group-item active"> <span>Kas SMP</span></a>
+        <a href="#" class="list-group-item"> <span>Kas Club</span></a>
+        <a href="#" class="list-group-item"> <span>Kas Umum</span></a>
+      </div>
+    </div>
+
+    <div class="col-sm-10">
+      <%= link_to 'Input Kas SMA', new_kas_sma_path , class: "btn btn-primary float-right"  %><br><br>
+
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th>Keterangan</th>
+            <th>Debit</th>
+            <th>Kredit</th>
+            <th>Saldo</th>
+            <th colspan="3">Action</th>
+          </tr>
+        </thead>      
+
+        <tbody>
+          <% @kas_smas.each do |kas_sma| %>
+            <tr>
+              <td><%= kas_sma.keterangan %></td>
+              <td><%= kas_sma.debit %></td>
+              <td><%= kas_sma.kredit %></td>
+              <td><%= kas_sma.saldo %></td>
+              <td><%= link_to 'Show', kas_sma %></td>
+              <td><%= link_to 'Edit', edit_kas_sma_path(kas_sma) %></td>
+              <td><%= link_to 'Destroy', kas_sma, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+
+<br>
+
+
+  </div>
+</div>

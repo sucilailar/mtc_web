@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nama kegiatan:</strong>
+  <%= @kegiatan.nama_kegiatan %>
+</p>
+
+<p>
+  <strong>Tempat:</strong>
+  <%= @kegiatan.tempat %>
+</p>
+
+<p>
+  <strong>Tgl:</strong>
+  <%= @kegiatan.tgl %>
+</p>
+
+<p>
+  <strong>Biaya:</strong>
+  <%= @kegiatan.biaya %>
+</p>
+
+<%= link_to 'Edit', edit_kegiatan_path(@kegiatan) %> |
+<%= link_to 'Back', kegiatans_path %>

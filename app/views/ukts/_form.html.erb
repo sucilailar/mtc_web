@@ -1,0 +1,65 @@
+<%= form_with(model: ukt, local: true) do |form| %>
+  <% if ukt.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(ukt.errors.count, "error") %> prohibited this ukt from being saved:</h2>
+
+      <ul>
+      <% ukt.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="container">
+  <div class="row">
+   <div class="col-sm-2">
+
+              <div class="list-group">
+                <a href="#" class="list-group-item "><span>Riwayat UKT saya</span></a>
+                <a href="#" class="list-group-item active"> <span>Form UKT</span></a>
+                <a href="#" class="list-group-item"> <span>Jadwal UKT</span></a>
+              </div>
+    </div>
+
+  <div class="col-sm-6">
+  <div class="field">
+    <%= form.label :nama %>
+    <%= form.text_field :nama , class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tempat %>
+    <%= form.text_field :tempat , class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tgl_lahir %>
+    <%= form.text_field :tgl_lahir , class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :no_reg %>
+    <%= form.text_field :no_reg , class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :foto %>
+    <%= form.file_field :foto , class: "form-control-file" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :geup %>
+    <%= form.text_field :geup , class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sabuk %>
+    <%= form.text_field :sabuk , class: "form-control" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Daftar UKT", class: "btn btn-info mt-3 float-right"%>
+  </div>
+<% end %>
+</div>
+</div>

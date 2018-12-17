@@ -1,0 +1,72 @@
+<%= form_with(model: akun, local: true) do |form| %>
+  <% if akun.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(akun.errors.count, "error") %> prohibited this akun from being saved:</h2>
+
+      <ul>
+      <% akun.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :no_reg %>
+    <%= form.number_field :no_reg %>
+  </div>
+
+  <div class="field">
+    <%= form.label :nama %>
+    <%= form.text_field :nama %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tempat_lahir %>
+    <%= form.text_field :tempat_lahir %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tgl_lahir %>
+    <%= form.date_select :tgl_lahir %>
+  </div>
+
+  <div class="field">
+    <%= form.label :geup %>
+    <%= form.number_field :geup %>
+  </div>
+
+  <div class="field">
+    <%= form.label :alamat %>
+    <%= form.text_area :alamat %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dojang %>
+    <%= form.text_field :dojang %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tahun_masuk %>
+    <%= form.number_field :tahun_masuk %>
+  </div>
+
+  <div class="field">
+    <%= form.label :angkatan %>
+    <%= form.number_field :angkatan %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pekerjaan %>
+    <%= form.text_field :pekerjaan %>
+  </div>
+
+  <div class="field">
+    <%= form.label :role_id %>
+    <%= form.number_field :role_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

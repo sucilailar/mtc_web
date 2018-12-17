@@ -1,0 +1,49 @@
+<%= render 'layouts/header_adm'%>
+<p id="notice"><%= notice %></p>
+
+<h1 style="text-align: center;">Daftar Dojang MTC</h1>
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+</head>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <%= link_to 'New Dojang', new_dojang_path , class: "btn btn-primary float-right"%> <br><br>
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th>Nama dojang</th>
+            <th>Alamat</th>
+            <th>Penanggung jawab</th>
+            <th colspan="3">Action</th>
+          </tr>
+        </thead>      
+
+        <tbody>
+          <% @dojangs.each do |dojang| %>
+            <tr>
+              <td><%= dojang.nama_dojang %></td>
+              <td><%= dojang.alamat %></td>
+              <td><%= dojang.penanggung_jawab %></td>
+              <td><%= link_to 'Show', dojang %></td>
+              <td><%= link_to 'Edit', edit_dojang_path(dojang) %></td>
+              <td><%= link_to 'Destroy', dojang, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+<br>
+
+
+  </div>
+</div>

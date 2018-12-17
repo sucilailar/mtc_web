@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nama dojang:</strong>
+  <%= @dojang.nama_dojang %>
+</p>
+
+<p>
+  <strong>Alamat:</strong>
+  <%= @dojang.alamat %>
+</p>
+
+<p>
+  <strong>Penanggung jawab:</strong>
+  <%= @dojang.penanggung_jawab %>
+</p>
+
+<%= link_to 'Edit', edit_dojang_path(@dojang) %> |
+<%= link_to 'Back', dojangs_path %>

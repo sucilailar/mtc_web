@@ -1,0 +1,2 @@
+class KategoriPembayaran < ApplicationRecord
+end

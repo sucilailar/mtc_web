@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  akun_id: 1
+  kategori_kegiatan_id: 1
+  nominal: 1.5
+  cicilan: 1
+  keterangan: false
+  id_bendahara: 1
+
+two:
+  akun_id: 1
+  kategori_kegiatan_id: 1
+  nominal: 1.5
+  cicilan: 1
+  keterangan: false
+  id_bendahara: 1

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  keterangan: MyString
+  debit: 1.5
+  kredit: 1.5
+  saldo: 1.5
+
+two:
+  keterangan: MyString
+  debit: 1.5
+  kredit: 1.5
+  saldo: 1.5

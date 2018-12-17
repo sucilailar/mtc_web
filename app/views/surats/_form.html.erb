@@ -1,0 +1,27 @@
+<%= form_with(model: surat, local: true) do |form| %>
+  <% if surat.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(surat.errors.count, "error") %> prohibited this surat from being saved:</h2>
+
+      <ul>
+      <% surat.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :no_surat %>
+    <%= form.text_field :no_surat %>
+  </div>
+
+  <div class="field">
+    <%= form.label :perihal %>
+    <%= form.text_field :perihal %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

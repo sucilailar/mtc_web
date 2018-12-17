@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Keterangan:</strong>
+  <%= @kas_club.keterangan %>
+</p>
+
+<p>
+  <strong>Debit:</strong>
+  <%= @kas_club.debit %>
+</p>
+
+<p>
+  <strong>Kredit:</strong>
+  <%= @kas_club.kredit %>
+</p>
+
+<p>
+  <strong>Saldo:</strong>
+  <%= @kas_club.saldo %>
+</p>
+
+<%= link_to 'Edit', edit_kas_club_path(@kas_club) %> |
+<%= link_to 'Back', kas_clubs_path %>

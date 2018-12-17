@@ -1,0 +1,2 @@
+class KasSma < ApplicationRecord
+end

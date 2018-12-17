@@ -1,0 +1,2 @@
+class KasClub < ApplicationRecord
+end

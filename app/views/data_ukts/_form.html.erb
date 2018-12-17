@@ -1,0 +1,27 @@
+<%= form_with(model: data_ukt, local: true) do |form| %>
+  <% if data_ukt.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(data_ukt.errors.count, "error") %> prohibited this data_ukt from being saved:</h2>
+
+      <ul>
+      <% data_ukt.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :periode %>
+    <%= form.text_field :periode %>
+  </div>
+
+  <div class="field">
+    <%= form.label :jumlah %>
+    <%= form.number_field :jumlah %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

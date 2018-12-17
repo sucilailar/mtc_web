@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nama: 
+  tempat: 
+  tgl_lahir: 
+  no_reg: 
+  foto: 
+  geup: 
+  sabuk: MyString
+
+two:
+  nama: 
+  tempat: 
+  tgl_lahir: 
+  no_reg: 
+  foto: 
+  geup: 
+  sabuk: MyString

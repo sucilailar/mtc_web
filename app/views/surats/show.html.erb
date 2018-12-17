@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>No surat:</strong>
+  <%= @surat.no_surat %>
+</p>
+
+<p>
+  <strong>Perihal:</strong>
+  <%= @surat.perihal %>
+</p>
+
+<%= link_to 'Edit', edit_surat_path(@surat) %> |
+<%= link_to 'Back', surats_path %>

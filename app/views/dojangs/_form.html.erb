@@ -1,0 +1,32 @@
+<%= form_with(model: dojang, local: true) do |form| %>
+  <% if dojang.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(dojang.errors.count, "error") %> prohibited this dojang from being saved:</h2>
+
+      <ul>
+      <% dojang.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nama_dojang %>
+    <%= form.text_field :nama_dojang %>
+  </div>
+
+  <div class="field">
+    <%= form.label :alamat %>
+    <%= form.text_area :alamat %>
+  </div>
+
+  <div class="field">
+    <%= form.label :penanggung_jawab %>
+    <%= form.number_field :penanggung_jawab %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

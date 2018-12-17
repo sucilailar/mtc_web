@@ -1,0 +1,52 @@
+<%= form_with(model: kejuaraan, local: true) do |form| %>
+  <% if kejuaraan.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(kejuaraan.errors.count, "error") %> prohibited this kejuaraan from being saved:</h2>
+
+      <ul>
+      <% kejuaraan.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :peserta_id %>
+    <%= form.number_field :peserta_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :event_id %>
+    <%= form.number_field :event_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :perolehan %>
+    <%= form.text_field :perolehan %>
+  </div>
+
+  <div class="field">
+    <%= form.label :kategori_under %>
+    <%= form.text_field :kategori_under %>
+  </div>
+
+  <div class="field">
+    <%= form.label :jenis_kejuaraan %>
+    <%= form.text_field :jenis_kejuaraan %>
+  </div>
+
+  <div class="field">
+    <%= form.label :prestasi_pemula %>
+    <%= form.text_field :prestasi_pemula %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tingkat %>
+    <%= form.text_field :tingkat %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

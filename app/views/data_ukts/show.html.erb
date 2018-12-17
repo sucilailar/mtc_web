@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Periode:</strong>
+  <%= @data_ukt.periode %>
+</p>
+
+<p>
+  <strong>Jumlah:</strong>
+  <%= @data_ukt.jumlah %>
+</p>
+
+<%= link_to 'Edit', edit_data_ukt_path(@data_ukt) %> |
+<%= link_to 'Back', data_ukts_path %>

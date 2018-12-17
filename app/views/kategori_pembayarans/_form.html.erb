@@ -1,0 +1,27 @@
+<%= form_with(model: kategori_pembayaran, local: true) do |form| %>
+  <% if kategori_pembayaran.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(kategori_pembayaran.errors.count, "error") %> prohibited this kategori_pembayaran from being saved:</h2>
+
+      <ul>
+      <% kategori_pembayaran.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :katagori_pembayaran %>
+    <%= form.text_field :katagori_pembayaran %>
+  </div>
+
+  <div class="field">
+    <%= form.label :nominal %>
+    <%= form.text_field :nominal %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

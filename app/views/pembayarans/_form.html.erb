@@ -1,0 +1,47 @@
+<%= form_with(model: pembayaran, local: true) do |form| %>
+  <% if pembayaran.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(pembayaran.errors.count, "error") %> prohibited this pembayaran from being saved:</h2>
+
+      <ul>
+      <% pembayaran.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :akun_id %>
+    <%= form.number_field :akun_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :kategori_kegiatan_id %>
+    <%= form.number_field :kategori_kegiatan_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :nominal %>
+    <%= form.text_field :nominal %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cicilan %>
+    <%= form.number_field :cicilan %>
+  </div>
+
+  <div class="field">
+    <%= form.label :keterangan %>
+    <%= form.check_box :keterangan %>
+  </div>
+
+  <div class="field">
+    <%= form.label :id_bendahara %>
+    <%= form.number_field :id_bendahara %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

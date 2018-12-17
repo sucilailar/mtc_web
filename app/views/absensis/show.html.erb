@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Akun:</strong>
+  <%= @absensi.akun_id %>
+</p>
+
+<p>
+  <strong>Tgl:</strong>
+  <%= @absensi.tgl %>
+</p>
+
+<p>
+  <strong>Keterangan:</strong>
+  <%= @absensi.keterangan %>
+</p>
+
+<p>
+  <strong>Dojang:</strong>
+  <%= @absensi.dojang_id %>
+</p>
+
+<p>
+  <strong>Id sekretaris:</strong>
+  <%= @absensi.id_sekretaris %>
+</p>
+
+<%= link_to 'Edit', edit_absensi_path(@absensi) %> |
+<%= link_to 'Back', absensis_path %>

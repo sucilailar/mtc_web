@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  kejuaraan: MyString
+  kegiatan_id: 1
+  jumlah_peserta: 1
+  emas: 1
+  perak: 1
+  perunggu: 1
+  total_medali: MyString
+
+two:
+  kejuaraan: MyString
+  kegiatan_id: 1
+  jumlah_peserta: 1
+  emas: 1
+  perak: 1
+  perunggu: 1
+  total_medali: MyString

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Katagori pembayaran:</strong>
+  <%= @kategori_pembayaran.katagori_pembayaran %>
+</p>
+
+<p>
+  <strong>Nominal:</strong>
+  <%= @kategori_pembayaran.nominal %>
+</p>
+
+<%= link_to 'Edit', edit_kategori_pembayaran_path(@kategori_pembayaran) %> |
+<%= link_to 'Back', kategori_pembayarans_path %>

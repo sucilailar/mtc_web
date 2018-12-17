@@ -18,6 +18,8 @@ gem 'jquery-rails'
 gem 'font-awesome-rails'
 gem 'carrierwave', '~> 0.10.0'
 gem 'mini_magick', '~> 4.3'
+# gem "meta_where"
+gem "meta_search"
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
 

@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Akun:</strong>
+  <%= @data_kejuaraan.akun_id %>
+</p>
+
+<p>
+  <strong>Kegiatan:</strong>
+  <%= @data_kejuaraan.kegiatan_id %>
+</p>
+
+<p>
+  <strong>Perolehan:</strong>
+  <%= @data_kejuaraan.perolehan %>
+</p>
+
+<p>
+  <strong>Kategori under:</strong>
+  <%= @data_kejuaraan.kategori_under %>
+</p>
+
+<p>
+  <strong>Jenis kejuaraan:</strong>
+  <%= @data_kejuaraan.jenis_kejuaraan %>
+</p>
+
+<p>
+  <strong>Prestasi pemula:</strong>
+  <%= @data_kejuaraan.prestasi_pemula %>
+</p>
+
+<p>
+  <strong>Tingkat:</strong>
+  <%= @data_kejuaraan.tingkat %>
+</p>
+
+<%= link_to 'Edit', edit_data_kejuaraan_path(@data_kejuaraan) %> |
+<%= link_to 'Back', data_kejuaraans_path %>

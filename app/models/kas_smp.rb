@@ -1,0 +1,2 @@
+class KasSmp < ApplicationRecord
+end

@@ -1,0 +1,42 @@
+<%= form_with(model: ka, local: true) do |form| %>
+  <% if ka.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(ka.errors.count, "error") %> prohibited this ka from being saved:</h2>
+
+      <ul>
+      <% ka.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :keterangan %>
+    <%= form.text_field :keterangan %>
+  </div>
+
+  <div class="field">
+    <%= form.label :debit %>
+    <%= form.text_field :debit %>
+  </div>
+
+  <div class="field">
+    <%= form.label :kredit %>
+    <%= form.text_field :kredit %>
+  </div>
+
+  <div class="field">
+    <%= form.label :saldo %>
+    <%= form.text_field :saldo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :bendahara_id %>
+    <%= form.number_field :bendahara_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

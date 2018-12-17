@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  katagori_pembayaran: MyString
+  nominal: 1.5
+
+two:
+  katagori_pembayaran: MyString
+  nominal: 1.5

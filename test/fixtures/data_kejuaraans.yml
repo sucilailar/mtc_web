@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  akun_id: 1
+  kegiatan_id: 1
+  perolehan: MyString
+  kategori_under: MyString
+  jenis_kejuaraan: MyString
+  prestasi_pemula: MyString
+  tingkat: MyString
+
+two:
+  akun_id: 1
+  kegiatan_id: 1
+  perolehan: MyString
+  kategori_under: MyString
+  jenis_kejuaraan: MyString
+  prestasi_pemula: MyString
+  tingkat: MyString

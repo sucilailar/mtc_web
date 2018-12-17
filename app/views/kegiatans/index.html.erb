@@ -1,0 +1,51 @@
+<%= render 'layouts/header_adm'%>
+<p id="notice"><%= notice %></p>
+
+<h1 style="text-align: center;">Kategori Kegiatan</h1>
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+</head>
+
+<div class="container">
+   <div class="row">
+    <div class="col-sm-12">
+      <%= link_to 'New Kegiatan', new_kegiatan_path , class: "btn btn-primary float-right" %><br><br>
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th style="text-align: center">Nama kegiatan</th>
+            <th style="text-align: center">Tempat</th>
+            <th style="text-align: center">Tgl</th>
+            <th style="text-align: center">Biaya</th>
+            <th style="text-align: center"colspan="3">Action</th>
+          </tr>
+        </thead>      
+
+        <tbody>
+          <% @kegiatans.each do |kegiatan| %>
+            <tr>
+              <td><%= kegiatan.nama_kegiatan %></td>
+              <td><%= kegiatan.tempat %></td>
+              <td><%= kegiatan.tgl %></td>
+              <td><%= kegiatan.biaya %></td>
+              <td><%= link_to 'Show', kegiatan %></td>
+              <td><%= link_to 'Edit', edit_kegiatan_path(kegiatan) %></td>
+              <td><%= link_to 'Destroy', kegiatan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+<br>
+
+
+  </div>
+</div>

@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Peserta:</strong>
+  <%= @kejuaraan.peserta_id %>
+</p>
+
+<p>
+  <strong>Event:</strong>
+  <%= @kejuaraan.event_id %>
+</p>
+
+<p>
+  <strong>Perolehan:</strong>
+  <%= @kejuaraan.perolehan %>
+</p>
+
+<p>
+  <strong>Kategori under:</strong>
+  <%= @kejuaraan.kategori_under %>
+</p>
+
+<p>
+  <strong>Jenis kejuaraan:</strong>
+  <%= @kejuaraan.jenis_kejuaraan %>
+</p>
+
+<p>
+  <strong>Prestasi pemula:</strong>
+  <%= @kejuaraan.prestasi_pemula %>
+</p>
+
+<p>
+  <strong>Tingkat:</strong>
+  <%= @kejuaraan.tingkat %>
+</p>
+
+<%= link_to 'Edit', edit_kejuaraan_path(@kejuaraan) %> |
+<%= link_to 'Back', kejuaraans_path %>

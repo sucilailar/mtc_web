@@ -1,0 +1,2 @@
+module DojangsHelper
+end

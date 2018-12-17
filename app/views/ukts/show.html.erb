@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nama:</strong>
+  <%= @ukt.nama %>
+</p>
+
+<p>
+  <strong>Tempat:</strong>
+  <%= @ukt.tempat %>
+</p>
+
+<p>
+  <strong>Tgl lahir:</strong>
+  <%= @ukt.tgl_lahir %>
+</p>
+
+<p>
+  <strong>No reg:</strong>
+  <%= @ukt.no_reg %>
+</p>
+
+<p>
+  <strong>Foto:</strong>
+   <%= image_tag @ukt.foto.url if @ukt.foto? %>
+</p>
+
+<p>
+  <strong>Geup:</strong>
+  <%= @ukt.geup %>
+</p>
+
+<p>
+  <strong>Sabuk:</strong>
+  <%= @ukt.sabuk %>
+</p>
+
+<%= link_to 'Edit', edit_ukt_path(@ukt) %> |
+<%= link_to 'Back', ukts_path %>
