@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :pengurus
+  resources :geups
   resources :kas_clubs
   resources :kas_smps
   resources :kas_smas

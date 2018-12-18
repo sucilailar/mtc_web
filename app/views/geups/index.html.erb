@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Geups</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Geup</th>
+      <th>Warna string</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @geups.each do |geup| %>
+      <tr>
+        <td><%= geup.geup %></td>
+        <td><%= geup.warna_string %></td>
+        <td><%= link_to 'Show', geup %></td>
+        <td><%= link_to 'Edit', edit_geup_path(geup) %></td>
+        <td><%= link_to 'Destroy', geup, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Geup', new_geup_path %>

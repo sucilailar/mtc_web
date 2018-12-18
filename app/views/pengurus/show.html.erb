@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Akun:</strong>
+  <%= @penguru.akun_id %>
+</p>
+
+<p>
+  <strong>Role:</strong>
+  <%= @penguru.role_id %>
+</p>
+
+<p>
+  <strong>Periode awal:</strong>
+  <%= @penguru.periode_awal %>
+</p>
+
+<p>
+  <strong>Periode akhir:</strong>
+  <%= @penguru.periode_akhir %>
+</p>
+
+<%= link_to 'Edit', edit_penguru_path(@penguru) %> |
+<%= link_to 'Back', pengurus_path %>

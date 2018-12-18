@@ -1,0 +1,37 @@
+<%= form_with(model: penguru, local: true) do |form| %>
+  <% if penguru.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(penguru.errors.count, "error") %> prohibited this penguru from being saved:</h2>
+
+      <ul>
+      <% penguru.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :akun_id %>
+    <%= form.number_field :akun_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :role_id %>
+    <%= form.number_field :role_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :periode_awal %>
+    <%= form.number_field :periode_awal %>
+  </div>
+
+  <div class="field">
+    <%= form.label :periode_akhir %>
+    <%= form.number_field :periode_akhir %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

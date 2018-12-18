@@ -25,6 +25,7 @@ class AbsensisController < ApplicationController
   # POST /absensis.json
   def create
     @absensi = Absensi.new(absensi_params)
+    @akun = Akun.find(@absensi.akun_id)
 
     respond_to do |format|
       if @absensi.save

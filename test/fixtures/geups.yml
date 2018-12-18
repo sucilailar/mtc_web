@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  geup: 1
+  warna_string: MyString
+
+two:
+  geup: 1
+  warna_string: MyString

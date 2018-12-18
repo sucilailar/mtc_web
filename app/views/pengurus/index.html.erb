@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Pengurus</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Akun</th>
+      <th>Role</th>
+      <th>Periode awal</th>
+      <th>Periode akhir</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pengurus.each do |penguru| %>
+      <tr>
+        <td><%= penguru.akun_id %></td>
+        <td><%= penguru.role_id %></td>
+        <td><%= penguru.periode_awal %></td>
+        <td><%= penguru.periode_akhir %></td>
+        <td><%= link_to 'Show', penguru %></td>
+        <td><%= link_to 'Edit', edit_penguru_path(penguru) %></td>
+        <td><%= link_to 'Destroy', penguru, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Penguru', new_penguru_path %>

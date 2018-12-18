@@ -1,22 +1,50 @@
-<%= form_with(model: status, local: true) do |form| %>
-  <% if status.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(status.errors.count, "error") %> prohibited this status from being saved:</h2>
+<%= render 'layouts/header_adm'%>
+<br>
+<h1 style="text-align: center;">Absensi MTC</h1>
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+</head>
 
-      <ul>
-      <% status.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-2">
+      <div class="list-group">
+        <a href="#" class="list-group-item "><span>belum menemukan menu</span></a>
+        <a href="#" class="list-group-item active"> <span>Form UKT</span></a>
+        <a href="#" class="list-group-item"> <span>Jadwal UKT</span></a>
+      </div>
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= form.label :nama_status %>
-    <%= form.text_field :nama_status %>
-  </div>
+    <div class="col-sm-10">
+      <%= form_with(model: status, local: true) do |form| %>
+        <% if status.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(status.errors.count, "error") %> prohibited this status from being saved:</h2>      
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+            <ul>
+            <% status.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>     
+
+        <div class="field">
+          <%= form.label :nama_status %>
+          <%= form.text_field :nama_status , class: "form-control"%>
+        </div>      
+          <br>
+        <div class="actions">
+          <%= form.submit class: 'btn btn-primary float-right' %>
+        </div>
 <% end %>
+  </div>
+</div>

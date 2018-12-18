@@ -10,17 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_15_084458) do
+ActiveRecord::Schema.define(version: 2018_12_17_050203) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "absensis", force: :cascade do |t|
-    t.string "akun_id"
+    t.integer "akun_id1"
     t.date "tgl"
     t.string "keterangan"
     t.integer "dojang_id"
-    t.integer "id_sekretaris"
+    t.integer "akun_id2"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -30,9 +30,9 @@ ActiveRecord::Schema.define(version: 2018_12_15_084458) do
     t.string "nama"
     t.string "tempat_lahir"
     t.date "tgl_lahir"
-    t.integer "geup"
+    t.integer "geup_id"
     t.text "alamat"
-    t.string "dojang"
+    t.integer "dojang_id"
     t.integer "tahun_masuk"
     t.integer "angkatan"
     t.string "pekerjaan"
@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 2018_12_15_084458) do
   end
 
   create_table "comments", force: :cascade do |t|
-    t.integer "id_creator"
+    t.integer "akun_id"
     t.integer "id_new"
     t.text "comment"
     t.datetime "created_at", null: false
@@ -51,13 +51,13 @@ ActiveRecord::Schema.define(version: 2018_12_15_084458) do
   end
 
   create_table "data_kejuaraans", force: :cascade do |t|
-    t.integer "akun_id"
     t.integer "kegiatan_id"
-    t.string "perolehan"
-    t.string "kategori_under"
-    t.string "jenis_kejuaraan"
-    t.string "prestasi_pemula"
-    t.string "tingkat"
+    t.integer "jumlah_peserta"
+    t.integer "emas"
+    t.integer "perak"
+    t.integer "perunggu"
+    t.integer "jumlah_total_medali"
+    t.string "keterangan"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -70,9 +70,17 @@ ActiveRecord::Schema.define(version: 2018_12_15_084458) do
   end
 
   create_table "dojangs", force: :cascade do |t|
+    t.integer "dojang_id"
     t.string "nama_dojang"
     t.text "alamat"
     t.integer "penanggung_jawab"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "geups", force: :cascade do |t|
+    t.integer "geup"
+    t.string "warna_string"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -82,7 +90,7 @@ ActiveRecord::Schema.define(version: 2018_12_15_084458) do
     t.float "debit"
     t.float "kredit"
     t.float "saldo"
-    t.integer "bendahara_id"
+    t.integer "akun_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -92,7 +100,7 @@ ActiveRecord::Schema.define(version: 2018_12_15_084458) do
     t.float "debit"
     t.float "kredit"
     t.float "saldo"
-    t.float "id_bendahara"
+    t.integer "akun_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -102,7 +110,7 @@ ActiveRecord::Schema.define(version: 2018_12_15_084458) do
     t.float "debit"
     t.float "kredit"
     t.float "saldo"
-    t.float "id_bendahara"
+    t.integer "akun_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -112,7 +120,7 @@ ActiveRecord::Schema.define(version: 2018_12_15_084458) do
     t.float "debit"
     t.float "kredit"
     t.float "saldo"
-    t.float "id_bendahara"
+    t.integer "akun_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -125,6 +133,7 @@ ActiveRecord::Schema.define(version: 2018_12_15_084458) do
   end
 
   create_table "kegiatans", force: :cascade do |t|
+    t.integer "kegiatan_id"
     t.string "nama_kegiatan"
     t.text "tempat"
     t.date "tgl"
@@ -134,8 +143,8 @@ ActiveRecord::Schema.define(version: 2018_12_15_084458) do
   end
 
   create_table "kejuaraans", force: :cascade do |t|
-    t.integer "peserta_id"
-    t.integer "event_id"
+    t.integer "akun_id"
+    t.integer "kegiatan_id"
     t.string "perolehan"
     t.string "kategori_under"
     t.string "jenis_kejuaraan"
@@ -146,7 +155,7 @@ ActiveRecord::Schema.define(version: 2018_12_15_084458) do
   end
 
   create_table "news", force: :cascade do |t|
-    t.integer "id_creator"
+    t.integer "akun_id"
     t.string "judul"
     t.string "foto"
     t.text "isi"
@@ -156,12 +165,21 @@ ActiveRecord::Schema.define(version: 2018_12_15_084458) do
   end
 
   create_table "pembayarans", force: :cascade do |t|
-    t.integer "akun_id"
+    t.integer "akun_id1"
     t.integer "kategori_pembayaran_id"
     t.float "nominal"
     t.integer "cicilan"
     t.boolean "keterangan"
-    t.integer "id_bendahara"
+    t.integer "akun_id2"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "pengurus", force: :cascade do |t|
+    t.integer "akun_id"
+    t.integer "role_id"
+    t.integer "periode_awal"
+    t.integer "periode_akhir"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -173,6 +191,7 @@ ActiveRecord::Schema.define(version: 2018_12_15_084458) do
   end
 
   create_table "statuses", force: :cascade do |t|
+    t.integer "status_id"
     t.string "nama_status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -186,7 +205,7 @@ ActiveRecord::Schema.define(version: 2018_12_15_084458) do
   end
 
   create_table "ukts", force: :cascade do |t|
-    t.string "nama"
+    t.integer "akun_id"
     t.string "tempat"
     t.date "tgl_lahir"
     t.integer "no_reg"
@@ -197,4 +216,24 @@ ActiveRecord::Schema.define(version: 2018_12_15_084458) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "absensis", "akuns", column: "akun_id1"
+  add_foreign_key "absensis", "akuns", column: "akun_id2"
+  add_foreign_key "akuns", "dojangs"
+  add_foreign_key "akuns", "geups"
+  add_foreign_key "akuns", "roles"
+  add_foreign_key "akuns", "statuses"
+  add_foreign_key "comments", "akuns"
+  add_foreign_key "data_kejuaraans", "kegiatans"
+  add_foreign_key "kas", "akuns"
+  add_foreign_key "kas_clubs", "akuns"
+  add_foreign_key "kas_smas", "akuns"
+  add_foreign_key "kas_smps", "akuns"
+  add_foreign_key "kejuaraans", "akuns"
+  add_foreign_key "kejuaraans", "kegiatans"
+  add_foreign_key "news", "akuns"
+  add_foreign_key "pembayarans", "akuns", column: "akun_id1"
+  add_foreign_key "pembayarans", "akuns", column: "akun_id2"
+  add_foreign_key "pengurus", "akuns"
+  add_foreign_key "pengurus", "roles"
+  add_foreign_key "ukts", "akuns"
 end
