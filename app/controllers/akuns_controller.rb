@@ -25,7 +25,10 @@ class AkunsController < ApplicationController
   # POST /akuns.json
   def create
     @akun = Akun.new(akun_params)
-
+    @geup_name = Geup.select(@akun.geup_id)
+    @dojang_name = Dojang.select(@akun.dojang_id)
+    @status_name = Status.select(@akun.status_id)
+    @akun.role_id = 0
     respond_to do |format|
       if @akun.save
         format.html { redirect_to @akun, notice: 'Akun was successfully created.' }
@@ -69,6 +72,6 @@ class AkunsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def akun_params
-      params.require(:akun).permit(:no_reg, :nama, :tempat_lahir, :tgl_lahir, :geup, :alamat, :dojang, :tahun_masuk, :angkatan, :pekerjaan, :role_id)
+      params.require(:akun).permit(:no_reg, :nama, :tempat_lahir, :tgl_lahir, :geup_id, :alamat, :dojang_id, :tahun_masuk, :angkatan, :pekerjaan, :role_id, :status_id)
     end
 end

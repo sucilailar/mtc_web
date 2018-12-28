@@ -1,39 +1,64 @@
-<p id="notice"><%= notice %></p>
+<%= render 'layouts/header_adm'%>
+<br><br>
+<h1 style="text-align: center;">Data Kejuaraan MTC</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <% if notice.present?%>
+        <p style="text-align: center" id="notice" class="alert alert-success"><%= notice %></p>
+      <%end%>
+    </div>
+  </div>
 
-<p>
-  <strong>Akun:</strong>
-  <%= @data_kejuaraan.akun_id %>
-</p>
+  <div class="row">
+    <div class="col-sm-12">
+      <%= link_to 'Edit', edit_data_kejuaraan_path(@data_kejuaraan) , class: 'btn btn-warning float-right ml-2 mb-2'%> 
+      <%= link_to 'Back', data_kejuaraans_path, class: 'btn btn-primary float-right mb-2' %>
+       <table class="table mx-auto">
+        <tr>
+          <td>Nama Kegiatan</td>
+          <td>:</td>
+          <td><%= @data_kejuaraan.kegiatan_id %></td>
+        </tr>
 
-<p>
-  <strong>Kegiatan:</strong>
-  <%= @data_kejuaraan.kegiatan_id %>
-</p>
+        <tr>
+          <td>Jumlah Peserta</td>
+          <td>:</td>
+          <td><%= @data_kejuaraan.jumlah_peserta %></td>
+        </tr>
 
-<p>
-  <strong>Perolehan:</strong>
-  <%= @data_kejuaraan.perolehan %>
-</p>
+        <tr>
+          <td>Medai Emas</td>
+          <td>:</td>
+          <td><%= @data_kejuaraan.emas %></td>
+        </tr>
 
-<p>
-  <strong>Kategori under:</strong>
-  <%= @data_kejuaraan.kategori_under %>
-</p>
+        <tr>
+          <td>Medali Perak</td>
+          <td>:</td>
+          <td><%= @data_kejuaraan.perak %></td>
+        </tr>
 
-<p>
-  <strong>Jenis kejuaraan:</strong>
-  <%= @data_kejuaraan.jenis_kejuaraan %>
-</p>
+        <tr>
+          <td>Medali Perunggu</td>
+          <td>:</td>
+          <td><%= @data_kejuaraan.perunggu %></td>
+        </tr>
 
-<p>
-  <strong>Prestasi pemula:</strong>
-  <%= @data_kejuaraan.prestasi_pemula %>
-</p>
+        <tr>
+          <td>Jumlah Total Medali</td>
+          <td>:</td>
+          <td><%= @data_kejuaraan.jumlah_total_medali %></td>
+        </tr>
 
-<p>
-  <strong>Tingkat:</strong>
-  <%= @data_kejuaraan.tingkat %>
-</p>
+        <tr>
+          <td>Jumlah Peserta</td>
+          <td>:</td>
+          <td><%= @data_kejuaraan.keterangan %></td>
+        </tr>
 
-<%= link_to 'Edit', edit_data_kejuaraan_path(@data_kejuaraan) %> |
-<%= link_to 'Back', data_kejuaraans_path %>
+
+       </table>
+    </div>
+  </div>
+    

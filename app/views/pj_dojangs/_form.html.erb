@@ -1,0 +1,27 @@
+<%= form_with(model: pj_dojang, local: true) do |form| %>
+  <% if pj_dojang.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(pj_dojang.errors.count, "error") %> prohibited this pj_dojang from being saved:</h2>
+
+      <ul>
+      <% pj_dojang.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :dojang_id %>
+    <%= form.number_field :dojang_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :akun_id %>
+    <%= form.number_field :akun_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

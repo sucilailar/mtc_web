@@ -1,24 +1,48 @@
-<p id="notice"><%= notice %></p>
+<%= render 'layouts/header_adm'%>
+<br><br>
+<h1 style="text-align: center;">Absensi MTC</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <% if notice.present?%>
+        <p style="text-align: center" id="notice" class="alert alert-success"><%= notice %></p>
+      <%end%>
+    </div>
+  </div>
 
-<p>
-  <strong>Nama kegiatan:</strong>
-  <%= @kegiatan.nama_kegiatan %>
-</p>
+  <div class="row">
+  	<div class="col-sm-12">
+  	 	<table class="table mx-auto">
 
-<p>
-  <strong>Tempat:</strong>
-  <%= @kegiatan.tempat %>
-</p>
+  	 		<tr>
+  	 			<td>Nama Kegiatan</td>
+  	 			<td>:</td>
+  	 			<td><%= @kegiatan.nama_kegiatan %></td>
+  	 		</tr>
 
-<p>
-  <strong>Tgl:</strong>
-  <%= @kegiatan.tgl %>
-</p>
+  	 		<tr>
+  	 			<td>Tempat</td>
+  	 			<td>:</td>
+  	 			<td><%= @kegiatan.tempat %></td>
+  	 		</tr>
 
-<p>
-  <strong>Biaya:</strong>
-  <%= @kegiatan.biaya %>
-</p>
+  	 		<tr>
+  	 			<td>Tanggal</td>
+  	 			<td>:</td>
+  	 			<td><%= @kegiatan.tgl %></td>
+  	 		</tr>
 
-<%= link_to 'Edit', edit_kegiatan_path(@kegiatan) %> |
-<%= link_to 'Back', kegiatans_path %>
+
+  	 		<tr>
+  	 			<td>Biaya</td>
+  	 			<td>:</td>
+  	 			<td><%= @kegiatan.biaya %></td>
+  	 		</tr>
+		</table>
+		<%= link_to 'Edit', edit_kegiatan_path(@kegiatan) , class: 'btn btn-warning float-right ml-2'%> 
+<%= link_to 'Back', kegiatans_path, class: 'btn btn-primary float-right ml-2' %>
+	
+	</div>
+</div>
+
+</div>

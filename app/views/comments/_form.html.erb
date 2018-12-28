@@ -1,32 +1,51 @@
-<%= form_with(model: comment, local: true) do |form| %>
-  <% if comment.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
-
-      <ul>
-      <% comment.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<%= render 'layouts/header_adm'%>
+<br>
+<h1 style="text-align: center;">Komentar berita</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-2">
+      <div class="list-group">
+        <a href="#" class="list-group-item"><span>Absensi Keseluruhan</span></a>
+        <a href="#" class="list-group-item"> <span>Absensi SMA</span></a>
+        <a href="#" class="list-group-item"> <span>Absensi SMP</span></a>
+        <a href="#" class="list-group-item"> <span>Absensi Club</span></a>
+      </div>
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= form.label :id_creator %>
-    <%= form.number_field :id_creator %>
-  </div>
+    <div class="col-sm-10">
 
-  <div class="field">
-    <%= form.label :id_new %>
-    <%= form.number_field :id_new %>
-  </div>
+      <%= form_with(model: comment, local: true) do |form| %>
+        <% if comment.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(comment.errors.count, "error") %> prohibited this comment from being saved:</h2>      
 
-  <div class="field">
-    <%= form.label :comment %>
-    <%= form.text_area :comment %>
-  </div>
+            <ul>
+            <% comment.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>     
 
-  <div class="actions">
-    <%= form.submit %>
+        <div class="field">
+          <%= form.label :id_creator %>
+          <%= form.number_field :id_creator , class: 'form-control'%>
+        </div>      
+
+        <div class="field">
+          <%= form.label :id_new %>
+          <%= form.number_field :id_new , class: 'form-control'%>
+        </div>      
+
+        <div class="field">
+          <%= form.label :comment %>
+          <%= form.text_area :comment , class: 'form-control'%>
+        </div>      
+
+        <div class="actions">
+          <%= form.submit class: 'btn btn-primary mt-2 float-right' %>
+        </div>
+      <% end %>
+    </div>
   </div>
-<% end %>
+</div>

@@ -69,6 +69,6 @@ class DojangsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def dojang_params
-      params.require(:dojang).permit(:nama_dojang, :alamat, :penanggung_jawab)
+      params.require(:dojang).permit(:nama_dojang, :alamat)
     end
 end

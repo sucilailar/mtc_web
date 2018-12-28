@@ -29,7 +29,8 @@
       <table class="table">
         <thead class="thead-dark">
           <tr>
-            <th>Akun</th>
+            <th>No</th>
+            <th>Nama Kegiatan</th>
             <th>Kegiatan</th>
             <th>Perolehan</th>
             <th>Kategori under</th>
@@ -41,15 +42,16 @@
         </thead>      
 
         <tbody>
-          <% @data_kejuaraans.each do |data_kejuaraan| %>
+          <% @data_kejuaraans.each_with_index do |data_kejuaraan, index| %>
             <tr>
-              <td><%= data_kejuaraan.akun_id %></td>
+              <td><%= index %></td>
               <td><%= data_kejuaraan.kegiatan_id %></td>
-              <td><%= data_kejuaraan.perolehan %></td>
-              <td><%= data_kejuaraan.kategori_under %></td>
-              <td><%= data_kejuaraan.jenis_kejuaraan %></td>
-              <td><%= data_kejuaraan.prestasi_pemula %></td>
-              <td><%= data_kejuaraan.tingkat %></td>
+              <td><%= data_kejuaraan.jumlah_peserta %></td>
+              <td><%= data_kejuaraan.emas %></td>
+              <td><%= data_kejuaraan.perak %></td>
+              <td><%= data_kejuaraan.perunggu %></td>
+              <td><%= data_kejuaraan.jumlah_total_medali %></td>
+              <td><%= data_kejuaraan.keterangan %></td>
               <td><%= link_to 'Show', data_kejuaraan %></td>
               <td><%= link_to 'Edit', edit_data_kejuaraan_path(data_kejuaraan) %></td>
               <td><%= link_to 'Destroy', data_kejuaraan, method: :delete, data: { confirm: 'Are you sure?' } %></td>

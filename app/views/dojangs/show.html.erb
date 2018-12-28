@@ -1,19 +1,33 @@
-<p id="notice"><%= notice %></p>
+<%= render 'layouts/header_adm'%>
+<br><br>
+<h1 style="text-align: center;">Daftar Dojang MTC</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <% if notice.present?%>
+        <p style="text-align: center" id="notice" class="alert alert-success"><%= notice %></p>
+      <%end%>
+    </div>
+  </div>
 
-<p>
-  <strong>Nama dojang:</strong>
-  <%= @dojang.nama_dojang %>
-</p>
+  <div class="row">
+    <div class="col-sm-12">
+      <table class="table mx-auto">
+		<tr>
+			<td>Nama Dojang</td>
+			<td>:</td>
+			<td><%= @dojang.nama_dojang %></td>
+		</tr>
+		 
+		<tr>
+			<td>Alamat</td>
+			<td>:</td>
+			<td><%= @dojang.alamat %></td>
+		</tr>
+	</table>		
+		
 
-<p>
-  <strong>Alamat:</strong>
-  <%= @dojang.alamat %>
-</p>
-
-<p>
-  <strong>Penanggung jawab:</strong>
-  <%= @dojang.penanggung_jawab %>
-</p>
-
-<%= link_to 'Edit', edit_dojang_path(@dojang) %> |
-<%= link_to 'Back', dojangs_path %>
+		<%= link_to 'Edit', edit_dojang_path(@dojang), class: "btn btn-warning ml-4 float-right" %> 
+		<%= link_to 'Back', dojangs_path, class: "btn btn-primary float-right" %>
+	</div>
+</div>

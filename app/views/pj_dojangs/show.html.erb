@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Dojang:</strong>
+  <%= @pj_dojang.dojang_id %>
+</p>
+
+<p>
+  <strong>Akun:</strong>
+  <%= @pj_dojang.akun_id %>
+</p>
+
+<%= link_to 'Edit', edit_pj_dojang_path(@pj_dojang) %> |
+<%= link_to 'Back', pj_dojangs_path %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_17_050203) do
+ActiveRecord::Schema.define(version: 2018_12_18_085536) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,16 +64,25 @@ ActiveRecord::Schema.define(version: 2018_12_17_050203) do
 
   create_table "data_ukts", force: :cascade do |t|
     t.string "periode"
+    t.integer "sabuk_putih"
+    t.integer "sabuk_kuning_polos"
+    t.integer "sabuk_kuning_strip"
+    t.integer "sabuk_hijau_polos"
+    t.integer "sabuk_hijau_strip"
+    t.integer "sabuk_biru_polos"
+    t.integer "sabuk_biru_strip"
+    t.integer "sabuk_merah_polos"
+    t.integer "sabuk_merah_strip"
+    t.integer "sabuk_merah_strip_satu"
+    t.integer "sabuk_merah_strip_dua"
     t.integer "jumlah"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "dojangs", force: :cascade do |t|
-    t.integer "dojang_id"
     t.string "nama_dojang"
     t.text "alamat"
-    t.integer "penanggung_jawab"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -180,6 +189,13 @@ ActiveRecord::Schema.define(version: 2018_12_17_050203) do
     t.integer "role_id"
     t.integer "periode_awal"
     t.integer "periode_akhir"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "pj_dojangs", force: :cascade do |t|
+    t.integer "dojang_id"
+    t.integer "akun_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

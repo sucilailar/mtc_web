@@ -1,0 +1,2 @@
+class PjDojang < ApplicationRecord
+end

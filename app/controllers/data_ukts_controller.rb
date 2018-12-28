@@ -69,6 +69,6 @@ class DataUktsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def data_ukt_params
-      params.require(:data_ukt).permit(:periode, :jumlah)
+      params.require(:data_ukt).permit(:periode, :sabuk_putih, :sabuk_kuning_polos, :sabuk_kuning_strip, :sabuk_hijau_polos, :sabuk_hijau_strip, :sabuk_biru_polos, :sabuk_biru_strip, :sabuk_merah_polos, :sabuk_merah_strip_satu, :sabuk_merah_strip_dua, :jumlah)
     end
 end

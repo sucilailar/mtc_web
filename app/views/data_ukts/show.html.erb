@@ -1,14 +1,95 @@
-<p id="notice"><%= notice %></p>
+<%= render 'layouts/header_adm'%>
+<br><br>
+<h1 style="text-align: center;">Data UKT MTC</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <% if notice.present?%>
+        <p style="text-align: center" id="notice" class="alert alert-success"><%= notice %></p>
+      <%end%>
+    </div>
+  </div>
 
-<p>
-  <strong>Periode:</strong>
-  <%= @data_ukt.periode %>
-</p>
+  <div class="row">
+    <div class="col-sm-12">
+		<%= link_to 'Edit', edit_data_ukt_path(@data_ukt), class: 'btn btn-warning float-right ml-2 mb-2' %> 
+		<%= link_to 'Back', data_ukts_path , class: 'btn btn-primary float-right mb-2' %>
+    	<table class="table mx-auto">
+    		<tr>
+    			<td>Periode</td>
+    			<td>:</td>
+    			<td><%= @data_ukt.periode %></td>
+    		</tr>
 
-<p>
-  <strong>Jumlah:</strong>
-  <%= @data_ukt.jumlah %>
-</p>
+    		<tr>
+    			<td>Sabuk Putih</td>
+    			<td>:</td>
+    			<td><%= @data_ukt.sabuk_putih %></td>
+    		</tr>
 
-<%= link_to 'Edit', edit_data_ukt_path(@data_ukt) %> |
-<%= link_to 'Back', data_ukts_path %>
+    		<tr>
+    			<td>Sabuk Kuning Polos</td>
+    			<td>:</td>
+    			<td><%= @data_ukt.sabuk_kuning_polos %></td>
+    		</tr>
+
+    		<tr>
+    			<td>Sabuk Kuning Strip</td>
+    			<td>:</td>
+    			<td><%= @data_ukt.sabuk_kuning_strip %></td>
+    		</tr>
+
+    		<tr>
+    			<td>Sabuk Hijau Polos</td>
+    			<td>:</td>
+    			<td><%= @data_ukt.sabuk_hijau_polos %></td>
+    		</tr>
+
+    		<tr>
+    			<td>Sabuk Hijau Strip</td>
+    			<td>:</td>
+    			<td><%= @data_ukt.sabuk_hijau_strip %></td>
+    		</tr>
+
+    		<tr>
+    			<td>Sabuk Biru Polos</td>
+    			<td>:</td>
+    			<td><%= @data_ukt.sabuk_biru_polos %></td>
+    		</tr>
+
+    		<tr>
+    			<td>Sabuk Biru Strip</td>
+    			<td>:</td>
+    			<td><%= @data_ukt.sabuk_biru_strip %></td>
+    		</tr>
+
+    		<tr>
+    			<td>Sabuk Merah Polos</td>
+    			<td>:</td>
+    			<td><%= @data_ukt.sabuk_merah_polos %></td>
+    		</tr>
+
+    		<tr>
+    			<td>Sabuk Merah Strip 1</td>
+    			<td>:</td>
+    			<td><%= @data_ukt.sabuk_merah_strip_satu %></td>
+    		</tr>
+
+    		<tr>
+    			<td>Sabuk Merah Strip 2</td>
+    			<td>:</td>
+    			<td><%= @data_ukt.sabuk_merah_strip_dua %></td>
+    		</tr>
+
+    		<tr>
+    			<td>Jumlah</td>
+    			<td>:</td>
+    			<td><%= @data_ukt.jumlah %></td>
+    		</tr>
+       </table>
+   </div>
+</div>
+</div>
+
+
+

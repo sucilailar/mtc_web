@@ -1,72 +1,92 @@
-<%= form_with(model: akun, local: true) do |form| %>
-  <% if akun.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(akun.errors.count, "error") %> prohibited this akun from being saved:</h2>
+<%= render 'layouts/header_adm'%>
+<br><br>
+<h1 style="text-align: center;">Daftar Akun MTC</h1>
 
-      <ul>
-      <% akun.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<div class="container">
+  <div class="row">
+     <div class="col-sm-2">
+      <div class="list-group">
+        <a href="#" class="list-group-item "><span>Asisten Pelatih</span></a>
+        <a href="#" class="list-group-item "> <span>Bendahara</span></a>
+        <a href="#" class="list-group-item"> <span>Sekretaris</span></a>
+        <a href="#" class="list-group-item"> <span>Anggota Aktif</span></a>
+        <a href="#" class="list-group-item"> <span>Alumni</span></a>
+        <a href="#" class="list-group-item"> <span>Semua Data</span></a>
+      </div>
     </div>
-  <% end %>
+    
+    <div class="col-sm-8">
+      <%= form_with(model: akun, local: true) do |form| %>
+        <% if akun.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(akun.errors.count, "error") %> prohibited this akun from being saved:</h2>      
 
-  <div class="field">
-    <%= form.label :no_reg %>
-    <%= form.number_field :no_reg %>
-  </div>
+            <ul>
+            <% akun.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>     
 
-  <div class="field">
-    <%= form.label :nama %>
-    <%= form.text_field :nama %>
-  </div>
+        <div class="field">
+          <%= form.label :no_reg %>
+          <%= form.number_field :no_reg, class: "form-control" %>
+        </div>      
 
-  <div class="field">
-    <%= form.label :tempat_lahir %>
-    <%= form.text_field :tempat_lahir %>
-  </div>
+        <div class="field">
+          <%= form.label :nama %>
+          <%= form.text_field :nama, class: "form-control" %>
+        </div>      
 
-  <div class="field">
-    <%= form.label :tgl_lahir %>
-    <%= form.date_select :tgl_lahir %>
-  </div>
+        <div class="field">
+          <%= form.label :tempat_lahir %>
+          <%= form.text_field :tempat_lahir, class: "form-control" %>
+        </div>      
 
-  <div class="field">
-    <%= form.label :geup %>
-    <%= form.number_field :geup %>
-  </div>
+        <div class="field">
+          <%= form.label :tgl_lahir %>
+          <%= form.date_field :tgl_lahir , class: "form-control"%>
+        </div>      
 
-  <div class="field">
-    <%= form.label :alamat %>
-    <%= form.text_area :alamat %>
-  </div>
+        <div class="field">
+          <%= form.label :Sabuk %>
+          <%= select_tag "akun[geup_id]", options_for_select(Geup.all.pluck(:warna_string, :id), selected: @akun.geup_id), class: 'form-control'  %>
+        </div>      
 
-  <div class="field">
-    <%= form.label :dojang %>
-    <%= form.text_field :dojang %>
-  </div>
+        <div class="field">
+          <%= form.label :alamat %>
+          <%= form.text_area :alamat , class: "form-control"%>
+        </div>      
 
-  <div class="field">
-    <%= form.label :tahun_masuk %>
-    <%= form.number_field :tahun_masuk %>
-  </div>
+        <div class="field">
+          <%= form.label :dojang %>
+          <%= select_tag "akun[dojang_id]", options_for_select(Dojang.all.pluck(:nama_dojang, :id), selected: @akun.dojang_id), class: 'form-control'  %>
+        </div>      
 
-  <div class="field">
-    <%= form.label :angkatan %>
-    <%= form.number_field :angkatan %>
-  </div>
+        <div class="field">
+          <%= form.label :tahun_masuk %>
+          <%= form.number_field :tahun_masuk , class: "form-control"%>
+        </div>      
 
-  <div class="field">
-    <%= form.label :pekerjaan %>
-    <%= form.text_field :pekerjaan %>
-  </div>
+        <div class="field">
+          <%= form.label :angkatan %>
+          <%= form.number_field :angkatan , class: "form-control"%>
+        </div>      
 
-  <div class="field">
-    <%= form.label :role_id %>
-    <%= form.number_field :role_id %>
-  </div>
+        <div class="field">
+          <%= form.label :pekerjaan %>
+          <%= form.text_field :pekerjaan , class: "form-control"%>
+        </div>      
 
-  <div class="actions">
-    <%= form.submit %>
+        <div class="field">
+          <%= form.label :status %>
+          <%= select_tag "akun[status_id]", options_for_select(Status.all.pluck(:nama_status, :id), selected: @akun.status_id), class: 'form-control'  %>
+        </div>
+        
+        <div class="actions">
+          <%= form.submit  class: 'btn btn-primary mt-2 float-right'%>
+        </div>
+      <% end %>
   </div>
-<% end %>
+</div>

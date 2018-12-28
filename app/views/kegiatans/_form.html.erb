@@ -1,37 +1,59 @@
-<%= form_with(model: kegiatan, local: true) do |form| %>
-  <% if kegiatan.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(kegiatan.errors.count, "error") %> prohibited this kegiatan from being saved:</h2>
+<%= render 'layouts/header_adm'%>
+<br><br>
+<h1 style="text-align: center;">Kegiatan MTC</h1>
 
-      <ul>
-      <% kegiatan.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<div class="container">
+  <div class="row">
+     <div class="col-sm-2">
+      <div class="list-group">
+        <a href="#" class="list-group-item "><span>Asisten Pelatih</span></a>
+        <a href="#" class="list-group-item "> <span>Bendahara</span></a>
+        <a href="#" class="list-group-item"> <span>Sekretaris</span></a>
+        <a href="#" class="list-group-item"> <span>Anggota Aktif</span></a>
+        <a href="#" class="list-group-item"> <span>Alumni</span></a>
+        <a href="#" class="list-group-item"> <span>Semua Data</span></a>
+      </div>
     </div>
-  <% end %>
+    
+    <div class="col-sm-8">
+     <%= form_with(model: kegiatan, local: true) do |form| %>
+      
+        <% if kegiatan.errors.any? %>
+      
+          <div id="error_explanation">
+      
+            <h2><%= pluralize(kegiatan.errors.count, "error") %> prohibited this kegiatan from being saved:</h2>    
+            <ul>
+            <% kegiatan.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>   
 
-  <div class="field">
-    <%= form.label :nama_kegiatan %>
-    <%= form.text_field :nama_kegiatan %>
-  </div>
+        <div class="field">    
+          <%= form.label :nama_kegiatan %>
+              <%= form.text_field :nama_kegiatan, class: "form-control"  %> 
+        </div>      
+        <div class="field">
+              <%= form.label :tempat %>
+              <%= form.text_area :tempat , class: "form-control" %>
+        </div>    
+      
+        <div class="field">  
+          <%= form.label :tgl %>
+          <%= form.date_field :tgl , class: "form-control" %>
+        </div>    
+        
+        <div class="field">
+          <%= form.label :biaya %>
+          <%= form.text_field :biaya , class: "form-control" %>
+        </div>      
 
-  <div class="field">
-    <%= form.label :tempat %>
-    <%= form.text_area :tempat %>
+        <div class="actions">    
+          <%= form.submit class: 'btn btn-primary mt-2 float-right'%>
+        </div>
+      <% end %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= form.label :tgl %>
-    <%= form.date_select :tgl %>
-  </div>
-
-  <div class="field">
-    <%= form.label :biaya %>
-    <%= form.text_field :biaya %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>

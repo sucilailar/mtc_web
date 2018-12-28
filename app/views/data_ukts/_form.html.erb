@@ -1,27 +1,98 @@
-<%= form_with(model: data_ukt, local: true) do |form| %>
-  <% if data_ukt.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(data_ukt.errors.count, "error") %> prohibited this data_ukt from being saved:</h2>
-
-      <ul>
-      <% data_ukt.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<%= render 'layouts/header_adm'%>
+<br>
+<h1 style="text-align: center;">Data UKT MTC</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-2">
+      <div class="list-group">
+        <a href="#" class="list-group-item"><span>Absensi Keseluruhan</span></a>
+        <a href="#" class="list-group-item"> <span>Absensi SMA</span></a>
+        <a href="#" class="list-group-item"> <span>Absensi SMP</span></a>
+        <a href="#" class="list-group-item"> <span>Absensi Club</span></a>
+      </div>
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= form.label :periode %>
-    <%= form.text_field :periode %>
-  </div>
+    <div class="col-sm-10">
 
-  <div class="field">
-    <%= form.label :jumlah %>
-    <%= form.number_field :jumlah %>
-  </div>
+      <%= form_with(model: data_ukt, local: true) do |form| %>
+      <% if data_ukt.errors.any? %>
+      
+      <div id="error_explanation">
+        <h2><%= pluralize(data_ukt.errors.count, "error") %> prohibited this data_ukt from being saved:</h2>
+
+        <ul>
+        <% data_ukt.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+     <% end %>
+
+    <div class="field">
+      <%= form.label :periode %>
+      <%= form.text_field :periode, class: "form-control" %>
+    </div>
+
+    <div class="field">
+      <%= form.label :sabuk_putih %>
+      <%= form.number_field :sabuk_putih, class: "form-control" %>
+    </div>
+
+    <div class="field">
+      <%= form.label :sabuk_kuning_polos %>
+      <%= form.number_field :sabuk_kuning_polos, class: "form-control" %>
+    </div> 
+
+    <div class="field">
+      <%= form.label :sabuk_kuning_strip %>
+      <%= form.number_field :sabuk_kuning_strip, class: "form-control" %>
+    </div> 
+
+    <div class="field">
+      <%= form.label :sabuk_hijau_polos %>
+      <%= form.number_field :sabuk_hijau_polos, class: "form-control" %>
+    </div>
+
+    <div class="field">
+      <%= form.label :sabuk_hijau_strip %>
+      <%= form.number_field :sabuk_hijau_strip , class: "form-control"%>
+    </div>
+
+    <div class="field">
+      <%= form.label :sabuk_biru_polos %>
+      <%= form.number_field :sabuk_biru_polos , class: "form-control"%>
+    </div>
+
+    <div class="field">
+      <%= form.label :sabuk_biru_strip %>
+      <%= form.number_field :sabuk_biru_strip , class: "form-control"%>
+    </div>
+
+    <div class="field">
+      <%= form.label :sabuk_merah_polos %>
+      <%= form.number_field :sabuk_merah_polos, class: "form-control" %>
+    </div>
+
+
+    <div class="field">
+      <%= form.label :sabuk_merah_strip_satu %>
+      <%= form.number_field :sabuk_merah_strip_satu, class: "form-control" %>
+    </div>
+
+    <div class="field">
+      <%= form.label :sabuk_merah_strip_dua %>
+      <%= form.number_field :sabuk_merah_strip_dua, class: "form-control" %>
+    </div>
+
+    <div class="field">
+      <%= form.label :jumlah %>
+      <%= form.number_field :jumlah, class: "form-control" %>
+    </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-primary float-right mt-2"%>
   </div>
 <% end %>
+    </div>
+  </div>
+</div>

@@ -3,18 +3,6 @@
 <p id="notice"><%= notice %></p>
 
 <h1 style="text-align: center;">Kas MTC</h1>
-<head>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
-</head>
-
 <div class="container">
    <div class="row">
      <div class="col-sm-2">
@@ -36,9 +24,35 @@
             <th>Kredit</th>
             <th>Saldo</th>
             <th>Bendahara</th>
-            <th colspan="3"></th>
+            <th colspan="3">Action</th>
           </tr>
         </thead>      
+
+        <%= form_with(model: ka, local: true) do |form| %>
+  <% if ka.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(ka.errors.count, "error") %> prohibited this ka from being saved:</h2>
+
+      <ul>
+      <% ka.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+    <tr>
+      <td><%= form.text_field :keterangan %></td>
+      <td><%= form.text_field :debit %></td>
+      <td><%= form.text_field :kredit %></td>
+      <td><%= form.text_field :saldo %></td>
+      <td><%= form.number_field :bendahara_id %></td>
+      <th colspan="3"><%= form.submit %></th>
+      
+    </tr>
+<% end %>
+
 
         <tbody>
           <% @kas.each do |ka| %>

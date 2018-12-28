@@ -1,27 +1,37 @@
-<%= form_with(model: geup, local: true) do |form| %>
-  <% if geup.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(geup.errors.count, "error") %> prohibited this geup from being saved:</h2>
+<%= render 'layouts/header_adm'%>
+<br>
+<h1 style="text-align: center;">Geup Sabuk</h1>
 
-      <ul>
-      <% geup.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-10">
+      <%= form_with(model: geup, local: true) do |form| %>
+        <% if geup.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(geup.errors.count, "error") %> prohibited this geup from being saved:</h2>      
+
+            <ul>
+            <% geup.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>     
+
+        <div class="field">
+          <%= form.label :geup %>
+          <%= form.number_field :geup , class: "form-control"%>
+        </div>      
+
+        <div class="field">
+          <%= form.label :warna_sabuk %>
+          <%= form.text_field :warna_string , class: "form-control"%>
+        </div>      
+
+        <div class="actions">
+          <%= form.submit class: 'btn btn-primary float-right mt-2' %>
+        </div>
       <% end %>
-      </ul>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :geup %>
-    <%= form.number_field :geup %>
   </div>
-
-  <div class="field">
-    <%= form.label :warna_string %>
-    <%= form.text_field :warna_string %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>

@@ -5,6 +5,7 @@ class DataKejuaraansController < ApplicationController
   # GET /data_kejuaraans.json
   def index
     @data_kejuaraans = DataKejuaraan.all
+    # @row_number = ((params[:page] - 1) * per_page) + 1
   end
 
   # GET /data_kejuaraans/1
@@ -25,7 +26,8 @@ class DataKejuaraansController < ApplicationController
   # POST /data_kejuaraans.json
   def create
     @data_kejuaraan = DataKejuaraan.new(data_kejuaraan_params)
-
+    @kegiatan = Kegiatan.select(@data_kejuaraan.kegiatan_id)
+    
     respond_to do |format|
       if @data_kejuaraan.save
         format.html { redirect_to @data_kejuaraan, notice: 'Data kejuaraan was successfully created.' }
@@ -69,6 +71,6 @@ class DataKejuaraansController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def data_kejuaraan_params
-      params.require(:data_kejuaraan).permit(:akun_id, :kegiatan_id, :perolehan, :kategori_under, :jenis_kejuaraan, :prestasi_pemula, :tingkat)
+      params.require(:data_kejuaraan).permit(:kegiatan_id, :jumlah_peserta, :emas, :perak, :perunggu, :jumlah_total_medali, :keterangan)
     end
 end

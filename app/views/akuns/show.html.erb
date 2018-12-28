@@ -1,59 +1,95 @@
-<p id="notice"><%= notice %></p>
+<%= render 'layouts/header_adm'%>
+<br><br>
+<h1 style="text-align: center;">Absensi MTC</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <% if notice.present?%>
+        <p style="text-align: center" id="notice" class="alert alert-success"><%= notice %></p>
+      <%end%>
+    </div>
+  </div>
 
-<p>
-  <strong>No reg:</strong>
-  <%= @akun.no_reg %>
-</p>
+  <div class="row">
+    <div class="col-sm-12">
+      <%= link_to 'Edit', edit_akun_path(@akun) , class: 'btn btn-warning float-right ml-2 mb-2'%> 
+      <%= link_to 'Back', akuns_path , class: 'btn btn-primary float-right mb-2' %>
+      <table class="table mx-auto">
+        <tr>
+          <td>No Registrasi</td>
+          <td>:</td>
+          <td><%= @akun.no_reg %></td>
+        </tr> 
 
-<p>
-  <strong>Nama:</strong>
-  <%= @akun.nama %>
-</p>
+        <tr>
+          <td>Nama</td>
+          <td>:</td>
+          <td><%= @akun.nama %></td>
+        </tr> 
 
-<p>
-  <strong>Tempat lahir:</strong>
-  <%= @akun.tempat_lahir %>
-</p>
+        <tr>
+          <td>Tempat Lahir</td>
+          <td>:</td>
+          <td><%= @akun.tempat_lahir %></td>
+        </tr>
 
-<p>
-  <strong>Tgl lahir:</strong>
-  <%= @akun.tgl_lahir %>
-</p>
+        <tr>
+          <td>Tanggal Lahir</td>
+          <td>:</td>
+          <td><%= @akun.tgl_lahir %></td>
+        </tr>
 
-<p>
-  <strong>Geup:</strong>
-  <%= @akun.geup %>
-</p>
+        <tr>
+          <td>Geup</td>
+          <td>:</td>
+          <td><%= @akun.geup.warna_string %></td>
+        </tr>
 
-<p>
-  <strong>Alamat:</strong>
-  <%= @akun.alamat %>
-</p>
+        <tr>
+          <td>Alamat</td>
+          <td>:</td>
+          <td><%= @akun.alamat %></td>
+        </tr>
 
-<p>
-  <strong>Dojang:</strong>
-  <%= @akun.dojang %>
-</p>
+        <tr>
+          <td>Dojang</td>
+          <td>:</td>
+          <td><%= @akun.dojang.nama_dojang %></td>
+        </tr>
 
-<p>
-  <strong>Tahun masuk:</strong>
-  <%= @akun.tahun_masuk %>
-</p>
+        <tr>
+          <td>Tahun Masuk</td>
+          <td>:</td>
+          <td><%= @akun.tahun_masuk %></td>
+        </tr>
 
-<p>
-  <strong>Angkatan:</strong>
-  <%= @akun.angkatan %>
-</p>
+        <tr>
+          <td>Angkatan</td>
+          <td>:</td>
+          <td><%= @akun.angkatan %></td>
+        </tr>
 
-<p>
-  <strong>Pekerjaan:</strong>
-  <%= @akun.pekerjaan %>
-</p>
+        <tr>
+          <td>Pekerjaan</td>
+          <td>:</td>
+          <td><%= @akun.pekerjaan %></td>
+        </tr>
 
-<p>
-  <strong>Role:</strong>
-  <%= @akun.role_id %>
-</p>
+        <tr>
+          <td>Nama</td>
+          <td>:</td>
+          <td><%= @akun.nama %></td>
+        </tr>
 
-<%= link_to 'Edit', edit_akun_path(@akun) %> |
-<%= link_to 'Back', akuns_path %>
+        <tr>
+          <td>Role</td>
+          <td>:</td>
+          <td><%= @akun.role.nama_role %></td>
+        </tr>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :pj_dojangs
   resources :pengurus
   resources :geups
   resources :kas_clubs
