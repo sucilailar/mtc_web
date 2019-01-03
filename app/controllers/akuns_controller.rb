@@ -29,6 +29,7 @@ class AkunsController < ApplicationController
     @dojang_name = Dojang.select(@akun.dojang_id)
     @status_name = Status.select(@akun.status_id)
     @akun.role_id = 1
+    @role_name = Role.select(@akun.role_id)
     
       if @akun.save
         session[:akun_id] = @akun.id

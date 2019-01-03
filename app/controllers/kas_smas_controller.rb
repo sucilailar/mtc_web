@@ -25,6 +25,19 @@ class KasSmasController < ApplicationController
   # POST /kas_smas.json
   def create
     @kas_sma = KasSma.new(kas_sma_params)
+    @kas_sma.akun_id = session[:akun_id]
+    if @kas_sma.saldo.last == nil
+      @kas_sma.saldo.last = 0
+      if @kas_sma.kredit == nil
+      @kas_sma.saldo = @kas_sma.saldo + @kas_sma.debit
+      end
+    elsif @kas_sma.kredit == nil
+      @kas_sma.saldo.last = @kas_sma.saldo.last + @kas_sma.debit
+    else
+      @kas_sma.saldo.last = @kas_sma.saldo.last - @kas_sma.kredit
+    end
+
+    
 
     respond_to do |format|
       if @kas_sma.save
@@ -69,6 +82,6 @@ class KasSmasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def kas_sma_params
-      params.require(:kas_sma).permit(:keterangan, :debit, :kredit, :saldo, :id_bendahara)
+      params.require(:kas_sma).permit(:keterangan, :debit, :kredit, :id_bendahara)
     end
 end
