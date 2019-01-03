@@ -659,6 +659,7 @@ section#contact :-ms-input-placeholder {
 footer {
   padding: 25px 0;
   text-align: center;
+  bottom: 0;
   
 }
 
@@ -718,4 +719,11 @@ ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons l
 .berita{
    border-color: coral;
  
+}
+
+.form-signup{
+  background-color: #D3D3D3;
+  opacity: 0.8;
+  margin-right: auto;
+  margin-left:  auto; 
 }

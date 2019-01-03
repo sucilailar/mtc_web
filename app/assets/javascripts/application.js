@@ -25,3 +25,6 @@
 //= require jquery/jquery.js
 //= require/vendor/bootstrap/js/bootstrap.bundle.js
 //= require bootstrap-datepicker
+//= require material/new.js
+//= require main.js
+//= require admin.js

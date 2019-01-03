@@ -1,5 +1,5 @@
 class Akun < ApplicationRecord
-
+	 has_secure_password
 	 belongs_to :geup
 	 belongs_to :dojang
 	 belongs_to :role

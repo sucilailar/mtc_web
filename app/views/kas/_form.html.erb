@@ -1,5 +1,5 @@
-<%= form_with(model: ka, local: true) do |form| %>
-  <% if ka.errors.any? %>
+<%= form_with(model: @ka, local: true) do |form| %>
+  <% if @ka.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(ka.errors.count, "error") %> prohibited this ka from being saved:</h2>
 
@@ -17,11 +17,12 @@
       <td><%= form.text_field :debit %></td>
       <td><%= form.text_field :kredit %></td>
       <td><%= form.text_field :saldo %></td>
-      <td><%= form.number_field :bendahara_id %></td>
+      <td><%= form.number_field :akun_id %></td>
+      <td> <%= form.submit %></td>
     </tr>
   </table>
 
   <div class="actions">
-    <%= form.submit %>
+   
   </div>
 <% end %>

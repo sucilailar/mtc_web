@@ -23,7 +23,10 @@ Rails.application.routes.draw do
   resources :ukts
   resources :news
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
- root to: 'home#index'
- get 'profil', to: 'profil#index'
- get 'sort_geup', to: 'ukts#sort_geup' 
+  root to: 'home#index'
+  get 'profil', to: 'profil#index'
+  get 'sort_geup', to: 'ukts#sort_geup' 
+  get 'login' => 'session#new'
+  post 'login' => 'session#create'
+  get 'logout' => 'session#destroy'
 end

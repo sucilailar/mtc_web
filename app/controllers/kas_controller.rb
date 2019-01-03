@@ -4,7 +4,9 @@ class KasController < ApplicationController
   # GET /kas
   # GET /kas.json
   def index
+    # @ka = Ka.new
     @kas = Ka.all
+    
   end
 
   # GET /kas/1
@@ -69,6 +71,6 @@ class KasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ka_params
-      params.require(:ka).permit(:keterangan, :debit, :kredit, :saldo, :bendahara_id)
+      params.require(:ka).permit(:keterangan, :debit, :kredit, :saldo, :akun_id)
     end
 end

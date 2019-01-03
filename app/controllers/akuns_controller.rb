@@ -28,16 +28,16 @@ class AkunsController < ApplicationController
     @geup_name = Geup.select(@akun.geup_id)
     @dojang_name = Dojang.select(@akun.dojang_id)
     @status_name = Status.select(@akun.status_id)
-    @akun.role_id = 0
-    respond_to do |format|
+    @akun.role_id = 1
+    
       if @akun.save
-        format.html { redirect_to @akun, notice: 'Akun was successfully created.' }
-        format.json { render :show, status: :created, location: @akun }
+        session[:akun_id] = @akun.id
+        redirect_to root_path
+        
       else
         format.html { render :new }
         format.json { render json: @akun.errors, status: :unprocessable_entity }
       end
-    end
   end
 
   # PATCH/PUT /akuns/1
@@ -64,6 +64,8 @@ class AkunsController < ApplicationController
     end
   end
 
+  
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_akun
@@ -72,6 +74,6 @@ class AkunsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def akun_params
-      params.require(:akun).permit(:no_reg, :nama, :tempat_lahir, :tgl_lahir, :geup_id, :alamat, :dojang_id, :tahun_masuk, :angkatan, :pekerjaan, :role_id, :status_id)
+      params.require(:akun).permit(:no_reg, :nama, :tempat_lahir, :tgl_lahir, :geup_id, :alamat, :dojang_id, :tahun_masuk, :angkatan, :pekerjaan, :role_id, :status_id, :username, :password)
     end
 end

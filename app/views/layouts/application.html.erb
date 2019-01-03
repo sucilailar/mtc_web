@@ -11,10 +11,14 @@
 
   <body>
     <%= render 'layouts/nav' %>
+    <% if session[:akun_id].present?  %>
+       <%= render 'layouts/admin_panel'%>
+       <% end %>
      <main role="main"> 
     <%= yield %>
      </main>
-    <%= render 'layouts/footer' %>
+   
 
   </body>
 </html>
+<%= render 'layouts/footer' %>

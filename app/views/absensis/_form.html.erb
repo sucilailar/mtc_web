@@ -29,8 +29,7 @@
 
   <div class="field">
     <%= form.label :akun_id %>
-    <%= select_tag "absensi[akun_id1]", options_for_select(Akun.all.pluck(:nama, :id), selected: @akun.nama), class: 'form-control'  %>
-    <%= form.text_field :akun_id , class: "form-control"%>
+    <%= select_tag "absensi[akun_id1]", options_for_select(Akun.all.pluck(:nama, :id), selected: @akun), class: 'form-control'  %>
   </div>
 
   <div class="field">

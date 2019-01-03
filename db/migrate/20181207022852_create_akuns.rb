@@ -13,6 +13,8 @@ class CreateAkuns < ActiveRecord::Migration[5.2]
       t.string :pekerjaan
       t.integer :role_id
       t.integer :status_id
+      t.string :username
+      t.string :password_digest
 
       t.timestamps
     end

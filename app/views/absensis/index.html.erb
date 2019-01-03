@@ -1,7 +1,8 @@
-<%= render 'layouts/header_adm'%>
-<br><br>
+
+
 <h1 style="text-align: center;">Absensi MTC</h1>
 <div class="container">
+
   <div class="row">
     <div class="col-sm-12">
     <% if notice.present?%>
@@ -9,19 +10,16 @@
     <%end%>
     </div>
   </div>
-  <div class="row">
-    <div class="col-sm-2">
-      <div class="list-group">
-        <a href="#" class="list-group-item active"><span>Absensi Keseluruhan</span></a>
-        <a href="#" class="list-group-item"> <span>Absensi SMA</span></a>
-        <a href="#" class="list-group-item"> <span>Absensi SMP</span></a>
-        <a href="#" class="list-group-item"> <span>Absensi Club</span></a>
-      </div>
+   <div class="row">
+    <div class="col-sm-12">
+    <%= link_to 'New Akun', new_absensi_path, class: "btn btn-primary float-right" %><br><br>
     </div>
+  </div>
+  <div class="row">
 
-    <div class="col-sm-10">
+    <div class="col-sm-10 ">
       <br><br>
-      <table class="table">
+      <table class="table ml-10">
         <thead class="thead-dark">
           <tr>
             <th>Akun</th>
