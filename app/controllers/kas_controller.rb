@@ -6,6 +6,21 @@ class KasController < ApplicationController
   def index
     # @ka = Ka.new
     @kas = Ka.all
+    @kas_umum = Ka.pluck(:saldo).last
+    @kas_sma = KasSma.pluck(:saldo).last
+    @kas_smp = KasSmp.pluck(:saldo).last
+    @kas_club = KasClub.pluck(:saldo).last
+    if @kas_umum == nil
+      @total_kas = @kas_sma + @kas_smp + @kas_club
+    elsif @kas_club == nil
+      @total_kas = @kas_umum + @kas_sma + @kas_smp
+    elsif  @kas_sma == nil
+      @total_kas = @kas_umum + @kas_smp + @kas_club
+    elsif @kas_smp == nil
+      @total_kas = @kas_umum + @kas_sma + @kas_club       
+    else
+      @total_kas = @kas_umum + @kas_sma + @kas_smp + @kas_club
+    end
     
   end
 
@@ -27,7 +42,13 @@ class KasController < ApplicationController
   # POST /kas.json
   def create
     @ka = Ka.new(ka_params)
-
+    @ka.akun_id = session[:akun_id]
+    saldo = Ka.pluck(:saldo).last
+    if saldo == nil
+      @ka.saldo = @ka.debit
+    else
+      @ka.saldo = (saldo + @ka.debit) - @ka.kredit
+    end
     respond_to do |format|
       if @ka.save
         format.html { redirect_to @ka, notice: 'Ka was successfully created.' }

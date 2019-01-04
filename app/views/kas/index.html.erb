@@ -1,20 +1,14 @@
-<%= render 'layouts/header_adm'%>
-
-<p id="notice"><%= notice %></p>
-
 <h1 style="text-align: center;">Kas MTC</h1>
 <div class="container">
-   <div class="row">
-     <div class="col-sm-2">
-      <div class="list-group">
-        <a href="#" class="list-group-item "><span>Kas SMA</span></a>
-        <a href="#" class="list-group-item active"> <span>Kas SMP</span></a>
-        <a href="#" class="list-group-item"> <span>Kas Club</span></a>
-        <a href="#" class="list-group-item"> <span>Kas Umum</span></a>
-      </div>
+  <div class="row">
+    <div class="col-sm-12">
+    <% if notice.present?%>
+      <p style="text-align: center" id="notice" class="alert alert-danger"><%= notice %></p>
+    <%end%>
     </div>
-
-    <div class="col-sm-8">    
+  </div>
+   <div class="row">
+    <div class="col-sm-10">    
       <%= link_to 'Input Kas', new_ka_path, class: "btn btn-primary float-right"  %> <br><br>
       <table class="table">
         <thead class="thead-dark">
@@ -46,7 +40,7 @@
   </div>
 
    <div class="col-sm-2">
-    Total kas: Rp. 00000  
+    Total kas: Rp. <%= @total_kas %> 
    </div>
   <br>
 

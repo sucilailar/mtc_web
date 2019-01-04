@@ -1,37 +1,41 @@
-<%= form_with(model: kas_club, local: true) do |form| %>
-  <% if kas_club.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(kas_club.errors.count, "error") %> prohibited this kas_club from being saved:</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <h1 style="text-align: center;">Kas SMA</h1>  
+        <%= form_with(model: kas_club, local: true) do |form| %>
+          <% if kas_club.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(kas_club.errors.count, "error") %> prohibited this kas_club from being saved:</h2>        
 
-      <ul>
-      <% kas_club.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+              <ul>
+              <% kas_club.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>       
+
+          <div class="field">
+            <%= form.label :keterangan %>
+            <%= form.text_field :keterangan , class:"form-control" %>
+          </div>        
+
+          <div class="field">
+            <%= form.label :debit %>
+            <%= form.text_field :debit , class:"form-control" %>
+          </div>        
+
+          <div class="field">
+            <%= form.label :kredit %>
+            <%= form.text_field :kredit , class:"form-control" %>
+          </div>        
+          <p class="text-danger">        
+          Note: Debit dan Kredit tidak boleh kosong</p> 
+          <div class="actions">
+            <%= form.submit class: 'btn btn-primary float-right mt-2' %>
+            <%= link_to 'Batal', kas_clubs_path , class: 'btn btn-danger float-right mr-2 mt-2'%>
+          </div>
+        <% end %>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :keterangan %>
-    <%= form.text_field :keterangan %>
   </div>
-
-  <div class="field">
-    <%= form.label :debit %>
-    <%= form.text_field :debit %>
-  </div>
-
-  <div class="field">
-    <%= form.label :kredit %>
-    <%= form.text_field :kredit %>
-  </div>
-
-  <div class="field">
-    <%= form.label :saldo %>
-    <%= form.text_field :saldo %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>

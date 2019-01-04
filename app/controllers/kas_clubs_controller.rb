@@ -25,7 +25,13 @@ class KasClubsController < ApplicationController
   # POST /kas_clubs.json
   def create
     @kas_club = KasClub.new(kas_club_params)
-
+    @kas_club.akun_id = session[:akun_id]
+    saldo = KasClub.pluck(:saldo).last
+    if saldo == nil
+      @kas_club.saldo = @kas_club.debit
+    else
+      @kas_club.saldo = (saldo + @kas_club.debit) - @kas_club.kredit
+    end
     respond_to do |format|
       if @kas_club.save
         format.html { redirect_to @kas_club, notice: 'Kas club was successfully created.' }

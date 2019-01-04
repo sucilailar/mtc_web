@@ -1,24 +1,35 @@
-<p id="notice"><%= notice %></p>
+<br><br>
+<h1 style="text-align: center;">Kas SMP</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <% if notice.present?%>
+        <p style="text-align: center" id="notice" class="alert alert-success"><%= notice %></p>
+      <%end%>
+    </div>
+  </div>
 
-<p>
-  <strong>Keterangan:</strong>
-  <%= @kas_smp.keterangan %>
-</p>
-
-<p>
-  <strong>Debit:</strong>
-  <%= @kas_smp.debit %>
-</p>
-
-<p>
-  <strong>Kredit:</strong>
-  <%= @kas_smp.kredit %>
-</p>
-
-<p>
-  <strong>Saldo:</strong>
-  <%= @kas_smp.saldo %>
-</p>
-
-<%= link_to 'Edit', edit_kas_smp_path(@kas_smp) %> |
-<%= link_to 'Back', kas_smps_path %>
+  <div class="row">
+    <div class="col-sm-12">
+		<%= link_to 'Edit', edit_kas_smp_path(@kas_smp), class: 'btn btn-warning float-right ml-2 mb-2' %> 
+		<%= link_to 'Back', kas_smps_path , class: 'btn btn-primary float-right mb-2' %>
+    	<table class="table mx-auto">
+    		<tr>
+    			<td>Keterangan</td>
+    			<td>:</td>
+    			<td><%= @kas_smp.keterangan %></td>
+    		</tr>
+    		<tr>
+    			<td>Debit</td>
+    			<td>:</td>
+    			<td><%= @kas_smp.debit %></td>
+    		</tr>
+    		    		<tr>
+    			<td>Kredit</td>
+    			<td>:</td>
+    			<td><%= @kas_smp.kredit %></td>
+    		</tr>
+    	</table>
+		</div>
+	</div>
+</div>

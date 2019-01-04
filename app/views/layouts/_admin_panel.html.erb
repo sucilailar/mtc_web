@@ -27,9 +27,9 @@
             <%end%>
             <% if current_user.role_id == 9 %>
               <li><%= link_to 'SMA', kas_smas_path %></li>
-              <li><%= link_to 'Club', new_akun_path %></li>
-              <li><%= link_to 'SMP', new_akun_path %></li>
-               <li><%= link_to 'Umum', new_akun_path %></li>
+              <li><%= link_to 'Club', kas_clubs_path %></li>
+              <li><%= link_to 'SMP', kas_smps_path %></li>
+               <li><%= link_to 'Umum', kas_path %></li>
             <%end%>
             <% if current_user.role_id == 2 %>
               <li><%= link_to 'SMA', new_akun_path %></li>

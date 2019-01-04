@@ -26,19 +26,12 @@ class KasSmasController < ApplicationController
   def create
     @kas_sma = KasSma.new(kas_sma_params)
     @kas_sma.akun_id = session[:akun_id]
-    if @kas_sma.saldo.last == nil
-      @kas_sma.saldo.last = 0
-      if @kas_sma.kredit == nil
-      @kas_sma.saldo = @kas_sma.saldo + @kas_sma.debit
-      end
-    elsif @kas_sma.kredit == nil
-      @kas_sma.saldo.last = @kas_sma.saldo.last + @kas_sma.debit
+    saldo = KasSma.pluck(:saldo).last
+    if saldo == nil
+      @kas_sma.saldo = @kas_sma.debit
     else
-      @kas_sma.saldo.last = @kas_sma.saldo.last - @kas_sma.kredit
+      @kas_sma.saldo = (saldo + @kas_sma.debit) - @kas_sma.kredit
     end
-
-    
-
     respond_to do |format|
       if @kas_sma.save
         format.html { redirect_to @kas_sma, notice: 'Kas sma was successfully created.' }

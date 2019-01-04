@@ -25,7 +25,14 @@ class KasSmpsController < ApplicationController
   # POST /kas_smps.json
   def create
     @kas_smp = KasSmp.new(kas_smp_params)
-
+    @kas_smp.akun_id = session[:akun_id]
+    saldo = KasSmp.pluck(:saldo).last
+    if saldo == nil
+      @kas_smp.saldo = @kas_smp.debit
+    else
+      @kas_smp.saldo = (saldo + @kas_smp.debit) - @kas_smp.kredit
+    end
+    
     respond_to do |format|
       if @kas_smp.save
         format.html { redirect_to @kas_smp, notice: 'Kas smp was successfully created.' }
