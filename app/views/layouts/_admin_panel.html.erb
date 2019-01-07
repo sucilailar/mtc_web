@@ -22,7 +22,7 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Kas<span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-cog"></span></a>
           <ul class="dropdown-menu forAnimate" role="menu">
-            <% if !current_user.role_id == 9 %> 
+            <% if current_user.role_id != 9 %> 
               <li><%= link_to 'Kas Saya', new_akun_path %></li>
             <%end%>
             <% if current_user.role_id == 9 %>
@@ -43,8 +43,8 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">UKT<span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-cog"></span></a>
           <ul class="dropdown-menu forAnimate" role="menu">
-            <% if !current_user.role_id == 9 %> 
-            <li><%= link_to 'Riwayat UKT Saya', new_akun_path %></li>
+            <% if current_user.role_id != 9 %> 
+              <li><%= link_to 'Riwayat UKT Saya', new_akun_path %></li>
             <%end%>
             <% if current_user.role_id == 9 %>
               <li><%= link_to 'SMA', new_akun_path %></li>
@@ -69,7 +69,7 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Kejuaraan<span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-cog"></span></a>
           <ul class="dropdown-menu forAnimate" role="menu">
-            <% if !current_user.role_id == 9 %> 
+            <% if current_user.role_id != 9 %> 
               <li><%= link_to 'Riwayat Kejuaraan Saya', new_akun_path %></li>
             <%end%>
             <% if current_user.role_id == 9 %>
@@ -91,7 +91,7 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Absensi <span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-cog"></span></a>
           <ul class="dropdown-menu forAnimate" role="menu">
-            <% if !current_user.role_id == 9 %> 
+            <% if current_user.role_id != 9 %> 
               <li><%= link_to 'Riwayat Absensi Saya', new_akun_path %></li>
             <%end%>
             <% if current_user.role_id == 9 %>
@@ -99,7 +99,7 @@
               <li><%= link_to 'Club', new_akun_path %></li>
               <li><%= link_to 'SMP', new_akun_path %></li>
                <li><%= link_to 'Rekapan Absensi', new_akun_path %></li>
-              <li><%= link_to 'Semua Data', new_akun_path %></li>
+              <li><%= link_to 'Semua Data', absensis_path %></li>
             <%end%>
              <% if current_user.role_id == 2 %>
               <li><%= link_to 'SMA', new_akun_path %></li>

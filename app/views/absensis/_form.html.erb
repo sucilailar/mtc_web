@@ -1,63 +1,50 @@
-<%= render 'layouts/header_adm'%>
 <br>
 <h1 style="text-align: center;">Absensi MTC</h1>
 <div class="container">
   <div class="row">
-    <div class="col-sm-2">
-      <div class="list-group">
-        <a href="#" class="list-group-item"><span>Absensi Keseluruhan</span></a>
-        <a href="#" class="list-group-item"> <span>Absensi SMA</span></a>
-        <a href="#" class="list-group-item"> <span>Absensi SMP</span></a>
-        <a href="#" class="list-group-item"> <span>Absensi Club</span></a>
-      </div>
-    </div>
-
     <div class="col-sm-10">
+      <%= form_with(model: absensi, local: true) do |form| %>
+        <% if absensi.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(absensi.errors.count, "error") %> prohibited this absensi from being saved:</h2>      
 
-<%= form_with(model: absensi, local: true) do |form| %>
-  <% if absensi.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(absensi.errors.count, "error") %> prohibited this absensi from being saved:</h2>
+            <ul>
+            <% absensi.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>     
 
-      <ul>
-      <% absensi.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <div class="field">
+
+          <%= form.label :akun_id %>
+          <%= select_tag "absensi[akun_id1]", options_for_select(@absensi_select), class: 'form-control t-field' %>
+        </div>      
+
+        <div class="field">
+          <%= form.label :tgl %>
+          <%= form.date_field :tgl, class: "form-control" %>
+        </div>      
+
+        <div class="field">
+          <%= form.label :keterangan %>
+           <%= form.select :keterangan, ['Hadir', 'Alfa', 'Sakit', 'Izin', 'Dispen'], {}, {:class =>  'form-control t-field'}%>
+         
+        </div>      
+
+        <div class="field">
+          <%= form.label :dojang_id %>
+          <%= form.number_field :dojang_id , class: "form-control"%>
+        </div>      
+
+       
+        <br>      
+
+        <div class="actions">
+          <%= form.submit  class: "btn btn-primary float-right"%>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :akun_id %>
-    <%= select_tag "absensi[akun_id1]", options_for_select(Akun.all.pluck(:nama, :id), selected: @akun), class: 'form-control'  %>
-  </div>
-
-  <div class="field">
-    <%= form.label :tgl %>
-    <%= form.date_field :tgl, class: "form-control" %>
-  </div>
-
-  <div class="field">
-    <%= form.label :keterangan %>
-     <%= form.select :keterangan, ['Hadir', 'Alfa', 'Sakit', 'Izin', 'Dispen'], {}, {:class =>  'form-control'}%>
-   
-  </div>
-
-  <div class="field">
-    <%= form.label :dojang_id %>
-    <%= form.number_field :dojang_id , class: "form-control"%>
-  </div>
-
-  <div class="field">
-    <%= form.label :id_sekretaris %>
-    <%= form.text_field :id_sekretaris, class: "form-control" %>
-  </div>
-  <br>
-
-  <div class="actions">
-    <%= form.submit  class: "btn btn-primary float-right"%>
-  </div>
-<% end %>
     </div>
   </div>
 </div>

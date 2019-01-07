@@ -75,11 +75,13 @@
         </div>
         <br><br>
 
-        <% if current_user.role_id == 9 %>
-          <div class="field">
-          <%= form.label :role_id %>
-          <%= select_tag "akun[role_id]", options_for_select(Role.all.pluck(:nama_role, :id), selected: @role), class: 'form-control'  %>
-        </div>
+        <% if current_user.present?%>
+          <% if current_user.role_id == 9 %>
+            <div class="field">
+            <%= form.label :role_id %>
+            <%= select_tag "akun[role_id]", options_for_select(Role.all.pluck(:nama_role, :id), selected: @role), class: 'form-control'  %>
+          </div>
+          <%end%>
         <%end%>
 
         <hr>

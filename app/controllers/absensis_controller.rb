@@ -14,7 +14,11 @@ class AbsensisController < ApplicationController
 
   # GET /absensis/new
   def new
+    require 'pry'
     @absensi = Absensi.new
+    dojang_select = Akun.find(session[:akun_id])
+    @dojang_sekretaris = dojang_select.dojang_id
+    @absensi_select = Akun.where(dojang_id: @dojang_sekretaris).map{|x| [x.nama, x.id]}
   end
 
   # GET /absensis/1/edit
@@ -25,7 +29,15 @@ class AbsensisController < ApplicationController
   # POST /absensis.json
   def create
     @absensi = Absensi.new(absensi_params)
-    @akun = Akun.find(@absensi.akun_id)
+    # @akun_name = Akun.select(@absensi.akun_id1)
+    dojang = Akun.find(@absensi.akun_id1)
+    @absensi.dojang_id = dojang.dojang_id
+    @absensi.akun_id2 = session[:akun_id]
+
+
+
+    # skill = Skill.find(@pokemon_skill.skill_id) #ambil skill id
+    # @pokemon_skill.current_pp = skill.max_pp 
 
     respond_to do |format|
       if @absensi.save
@@ -70,6 +82,6 @@ class AbsensisController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def absensi_params
-      params.require(:absensi).permit(:akun_id, :tgl, :keterangan, :dojang_id, :id_sekretaris)
+      params.require(:absensi).permit(:akun_id1, :tgl, :keterangan, :dojang_id, :akun_id2)
     end
 end

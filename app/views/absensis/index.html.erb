@@ -1,5 +1,3 @@
-
-
 <h1 style="text-align: center;" class="mt-5">Absensi MTC</h1>
 <div class="container">
 
@@ -34,11 +32,11 @@
         <tbody>
           <% @absensis.each do |absensi| %>
             <tr>
-              <td><%= absensi.akun_id %></td>
+              <td><%= absensi.akun_id.nama %></td>
               <td><%= absensi.tgl %></td>
               <td><%= absensi.keterangan %></td>
-              <td><%= absensi.dojang_id %></td>
-              <td><%= absensi.id_sekretaris %></td>
+              <td><%= absensi.dojang.nama_dojang %></td>
+              <td><%= absensi.akun_id.nama %></td>
               <td><%= link_to 'Show', absensi %></td>
               <td><%= link_to 'Edit', edit_absensi_path(absensi) %></td>
               <td><%= link_to 'Destroy', absensi, method: :delete, data: { confirm: 'Are you sure?' } %></td>
